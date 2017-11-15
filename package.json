@@ -1,0 +1,35 @@
+{
+  "name": "wetype-simple-template",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "author": "GrePuG",
+  "devDependencies": {
+    "@types/gulp": "^4.0.5",
+    "@types/gulp-rename": "^0.0.33",
+    "@types/lodash": "^4.14.85",
+    "@types/node": "^8.0.51",
+    "@types/rollup": "^0.41.1",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-flatten": "^0.3.1",
+    "gulp-flatten-requires": "^1.0.0",
+    "gulp-less": "^3.3.2",
+    "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-rollup": "^2.15.0",
+    "gulp-typescript": "^3.2.3",
+    "gulp-uglify": "^3.0.0",
+    "less": "^2.7.3",
+    "pug": "^2.0.0-rc.4",
+    "rollup": "^0.51.5",
+    "rollup-plugin-multi-entry": "^2.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-typescript": "^0.8.1",
+    "stream": "^0.0.2",
+    "through2": "^2.0.3",
+    "typescript": "^2.5.3"
+  },
+  "dependencies": {
+    "tslib": "^1.8.0"
+  }
+}
