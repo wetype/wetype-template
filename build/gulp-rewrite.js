@@ -1,7 +1,7 @@
 const through = require('through2')
-const rewriteReq = require('./rewriteRequire')
+const fs = require('fs')
 
-function rewrite(options) {
+module.exports = function rewrite(options) {
 
     return through.obj((file, enc, cb) => {
         let { path, contents } = file
@@ -13,4 +13,12 @@ function rewrite(options) {
 
 }
 
-module.exports = rewrite
+
+function rewriteReq(content) {
+    return content.replace(/var\s(.+?)\s=\srequire\("(.+?)"\);/g, (match, varName, moduleName) => {
+        if (/\.\//.test(moduleName)) {
+            return match
+        }
+        return `var ${varName} = require('./node_modules/${moduleName}');`
+    })
+}
