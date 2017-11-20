@@ -1,5 +1,5 @@
 import { PageDecor, global, PageConstr } from 'wetype-simple'
-import { testFunc } from '../../libs/util'
+import { testFunc, testFunc2 } from '../../libs/util'
 
 @PageDecor({
     config: {
@@ -9,21 +9,23 @@ import { testFunc } from '../../libs/util'
         }
     }
 })
-class Index extends PageConstr{
+class Index extends PageConstr {
 
-    abc = false
+    abc = true
 
-    ddd: any = [1,2,3, 4,5]
+    ddd: any = [1,2,3,1114,5,9,8,9,0]
+
+    list = []
     
     onLoad() {
-        console.log(testFunc())
+        console.log(testFunc2)
     }
 
-    click() {
-        // this.setData()
-        this.setData({
+    async click() {
+        await this.setDataAsync({
             'ddd': this.ddd.concat(['d'])
         })
+        console.log('done')
     }
 
 }

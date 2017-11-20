@@ -4,7 +4,6 @@ const tsProject = ts.createProject("tsconfig.json")
 const pug = require('gulp-pug')
 const rename = require('gulp-rename')
 const clean = require('gulp-clean')
-const fs = require('fs')
 const less = require('gulp-less')
 const nodeResolve = require('rollup-plugin-node-resolve')
 const _ = require('lodash')
@@ -14,12 +13,13 @@ const typescript = require('rollup-plugin-typescript')
 const rewrite = require('./build/gulp-rewrite')
 const writeJson = require('./build/gulp-write-json')
 const uglify = require('gulp-uglify')
-const { rollup } = require('rollup')
 const compileTpl = require('./build/gulp-compile-tpl')
 const copyModules = require('./build/gulp-copy-modules')
+const cache = require('gulp-cached')
 
 gulp.task('ts', () => {
     return tsProject.src()
+        .pipe(cache('ts'))
         .pipe(tsProject())
         .js
         .pipe(flatten())
@@ -50,27 +50,6 @@ gulp.task('less', cb => {
         .pipe(gulp.dest('dist'))
 })
 
-gulp.task('lib', async() => {
-    const bundle = await rollup({
-        input: './libs.ts',
-        plugins: [
-            typescript({
-                typescript: require('typescript')
-            }),
-            nodeResolve({
-                module: true
-            })
-        ]
-    });
-
-    await bundle.write({
-        file: './dist/libs.js',
-        format: 'cjs',
-        sourcemap: true
-    });
-
-})
-
 gulp.task('clean', () => {
     return gulp.src('dist', {
             read: false
@@ -85,14 +64,12 @@ gulp.task('copy', () => {
     gulp.src(pkgJsons)
     .pipe(copyModules())
     .pipe(flatten())
-    .pipe(gulp.dest('./dist/node_modules'))
+    .pipe(gulp.dest('./dist/modules'))
 
 })
 
 gulp.task('default', ['ts', 'pug', 'less', 'copy'])
 
-// const tsWatcher = gulp.watch(['src/app.ts', 'src/pages/**/*.ts', 'src/components/**/*.ts'], ['ts'])
-// const libWatch = gulp.watch('src/libs/**/*.ts', ['lib'])
 const tsWatcher = gulp.watch('src/**/*.ts', ['ts'])
 const pugWatcher = gulp.watch('src/**/*.pug', ['pug'])
 const lessWatcher = gulp.watch('src/**/*.less', ['less'])

@@ -8,7 +8,7 @@ import { AppDecor, global } from 'wetype-simple'
         ],
         window: {
             backgroundTextStyle: 'light',
-            navigationBarBackgroundColor: '#999',
+            navigationBarBackgroundColor: '#3cf',
             navigationBarTitleText: 'Project BAT',
         }
     }
@@ -16,7 +16,7 @@ import { AppDecor, global } from 'wetype-simple'
 class APP {
 
     onLaunch() {
-        console.log('onLaunch', this)
+        console.log('onLaunch')
     }
 
     onShow() {

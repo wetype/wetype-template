@@ -2,7 +2,7 @@ import { ComponentDecor } from 'wetype-simple'
 
 @ComponentDecor({
     config: {
-
+        
     },
     properties: {
 

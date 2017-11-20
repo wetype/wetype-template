@@ -15,10 +15,10 @@ module.exports = function rewrite(options) {
 
 
 function rewriteReq(content) {
-    return content.replace(/var\s(.+?)\s=\srequire\("(.+?)"\);/g, (match, varName, moduleName) => {
+    return content.replace(/([var|const])\s(.+?)\s=\srequire\("(.+?)"\);/g, (match, dec, varName, moduleName) => {
         if (/\.\//.test(moduleName)) {
             return match
         }
-        return `var ${varName} = require('./node_modules/${moduleName}');`
+        return `${dec} ${varName} = require('./modules/${moduleName}');`
     })
 }
