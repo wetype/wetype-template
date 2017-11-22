@@ -1,6 +1,5 @@
 import { PageDecor, global, PageConstr, wx } from 'wetype-simple'
 import { testFunc, testFunc2 } from '../../libs/util'
-import { uploadFile } from '../../../../wetype-simple/dist/typings/typings';
 
 @PageDecor({
     config: {
@@ -22,6 +21,9 @@ class Index extends PageConstr {
         let res = await wx.request({
             url: 'https://baidu.com',
             // method:
+        })
+        wx.getLocation({
+            
         })
         console.log(res)
     }
