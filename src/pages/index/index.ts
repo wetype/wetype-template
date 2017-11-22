@@ -1,5 +1,6 @@
-import { PageDecor, global, PageConstr } from 'wetype-simple'
+import { PageDecor, global, PageConstr, wx } from 'wetype-simple'
 import { testFunc, testFunc2 } from '../../libs/util'
+import { uploadFile } from '../../../../wetype-simple/dist/typings/typings';
 
 @PageDecor({
     config: {
@@ -17,11 +18,20 @@ class Index extends PageConstr {
 
     list = []
     
-    onLoad() {
-        console.log(testFunc2)
+    async onLoad() {
+        let res = await wx.request({
+            url: 'https://baidu.com',
+            // method:
+        })
+        console.log(res)
     }
 
     async click() {
+        wx.uploadFile({
+            url: '',
+            filePath: '',
+            name: ''
+        })
         await this.setDataAsync({
             'ddd': this.ddd.concat(['d'])
         })
