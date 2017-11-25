@@ -5,7 +5,8 @@
   "author": "GrePuG",
   "scripts": {
     "rm": "rm -rf ./dist/node_modules",
-    "start": "rm -rf dist && gulp"
+    "start": "rm -rf dist && gulp",
+    "p": "node ./build/newPage.js"
   },
   "devDependencies": {
     "@types/gulp": "^4.0.5",

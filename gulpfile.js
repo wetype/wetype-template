@@ -16,6 +16,7 @@ const uglify = require('gulp-uglify')
 const compileTpl = require('./build/gulp-compile-tpl')
 const copyModules = require('./build/gulp-copy-modules')
 const cache = require('gulp-cached')
+const fs = require('fs')
 
 gulp.task('ts', () => {
     return tsProject.src()
@@ -66,6 +67,29 @@ gulp.task('copy', () => {
     .pipe(flatten())
     .pipe(gulp.dest('./dist/modules'))
 
+})
+
+gulp.task('page', () => {
+    let { argv } = process
+    let pageName = argv.slice(-1)
+    let pugTpl = ``
+    let tsTpl = `
+    import { PageDecor, global, PageConstr, wx } from 'wetype-simple'
+
+    @PageDecor({
+        config: {
+
+        }
+    })
+    class ${pageName} extends PageConstr {
+
+    }
+    `
+    let lessTpl = ``
+    fs.mkdirSync(`src/pages/${pageName}`)
+    fs.writeFileSync(`src/pages/${pageName}/${pageName}.ts`, tsTpl, `utf-8`)
+    fs.writeFileSync(`src/pages/${pageName}/${pageName}.pug`, pugTpl, `utf-8`)
+    fs.writeFileSync(`src/pages/${pageName}/${pageName}.less`, lessTpl, `utf-8`)
 })
 
 gulp.task('default', ['ts', 'pug', 'less', 'copy'])
