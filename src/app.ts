@@ -4,6 +4,8 @@ import { AppDecor, global } from 'wetype-simple'
 @AppDecor({
     config: {
         pages: [
+            'me',
+            'clubManage',
             'index',
         ],
         window: {

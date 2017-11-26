@@ -1,4 +1,4 @@
-import { PageDecor, global, PageConstr, wx } from 'wetype-simple'
+import { PageDecor, global, PageConstr, wt } from 'wetype-simple'
 import { testFunc, testFunc2 } from '../../libs/util'
 
 @PageDecor({
@@ -18,18 +18,18 @@ class Index extends PageConstr {
     list = []
     
     async onLoad() {
-        let res = await wx.request({
+        let res = await wt.request({
             url: 'https://baidu.com',
             // method:
         })
-        wx.getLocation({
+        wt.getLocation({
             
         })
         console.log(res)
     }
 
     async click() {
-        wx.uploadFile({
+        wt.uploadFile({
             url: '',
             filePath: '',
             name: ''
