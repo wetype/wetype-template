@@ -1,7 +1,7 @@
-import { PageDecor, global, PageConstr, wt } from 'wetype-simple'
+import { Page, wt } from 'wetype-simple'
 import { testFunc, testFunc2 } from '../../libs/util'
 
-@PageDecor({
+@Page.decor({
     config: {
         disableScroll: true,
         usingComponents: {
@@ -9,7 +9,7 @@ import { testFunc, testFunc2 } from '../../libs/util'
         }
     }
 })
-class Index extends PageConstr {
+class Index extends Page {
 
     abc = true
 

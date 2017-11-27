@@ -1,7 +1,7 @@
-import { AppDecor, global } from 'wetype-simple'
+import { App } from 'wetype-simple'
 // import {  } from 'wetype-simple'
 
-@AppDecor({
+@App.decor({
     config: {
         pages: [
             'me',
@@ -15,7 +15,7 @@ import { AppDecor, global } from 'wetype-simple'
         }
     }
 })
-class APP {
+class APP extends App {
 
     onLaunch() {
         console.log('onLaunch')
@@ -24,5 +24,4 @@ class APP {
     onShow() {
 
     }
-
 }

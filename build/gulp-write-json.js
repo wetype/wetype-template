@@ -8,7 +8,7 @@ module.exports = function() {
     return through.obj((file, enc, cb) => {
         let { path, contents } = file
         let content = String(contents)
-        let matched = content.match(/[App|Page|Component]Decor\(\{([\s\S\w\W]+?)\}\)/i)
+        let matched = content.match(/[App|Page|Component]\.decor\(\{([\s\S\w\W]+?)\}\)/i)
         let isComponent = /ComponentDecor/.test(content)
         let isPage = /PageDecor/.test(content)
         if (matched) {

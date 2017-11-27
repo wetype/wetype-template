@@ -17,6 +17,7 @@ const compileTpl = require('./build/gulp-compile-tpl')
 const copyModules = require('./build/gulp-copy-modules')
 const cache = require('gulp-cached')
 const fs = require('fs')
+const imagemin = require('gulp-imagemin')
 
 gulp.task('ts', () => {
     return tsProject.src()
@@ -69,34 +70,18 @@ gulp.task('copy', () => {
 
 })
 
-gulp.task('page', () => {
-    let { argv } = process
-    let pageName = argv.slice(-1)
-    let pugTpl = ``
-    let tsTpl = `
-    import { PageDecor, global, PageConstr, wx } from 'wetype-simple'
-
-    @PageDecor({
-        config: {
-
-        }
-    })
-    class ${pageName} extends PageConstr {
-
-    }
-    `
-    let lessTpl = ``
-    fs.mkdirSync(`src/pages/${pageName}`)
-    fs.writeFileSync(`src/pages/${pageName}/${pageName}.ts`, tsTpl, `utf-8`)
-    fs.writeFileSync(`src/pages/${pageName}/${pageName}.pug`, pugTpl, `utf-8`)
-    fs.writeFileSync(`src/pages/${pageName}/${pageName}.less`, lessTpl, `utf-8`)
+gulp.task('img', () => {
+    gulp.src('src/img/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/img'))
 })
 
-gulp.task('default', ['ts', 'pug', 'less', 'copy'])
+gulp.task('default', ['ts', 'pug', 'less', 'copy', 'img'])
 
 const tsWatcher = gulp.watch('src/**/*.ts', ['ts'])
 const pugWatcher = gulp.watch('src/**/*.pug', ['pug'])
 const lessWatcher = gulp.watch('src/**/*.less', ['less'])
+const imgWatcher = gulp.watch('src/img/*', ['img'])
 
 tsWatcher.on('change', e => {
     console.log('File ' + e.path + ' was ' + e.type + ', running tasks...')

@@ -1,12 +1,16 @@
 
-import { PageDecor, global, PageConstr, wt, wx } from 'wetype-simple'
+import { wt, wx, Page } from 'wetype-simple'
 
-@PageDecor({
+@Page.decor({
     config: {
         
     }
 })
-class me extends PageConstr {
+class me extends Page {
+
+    onLoad() {
+        
+    }
 
     edit() {
         console.log('edit')

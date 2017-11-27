@@ -3,14 +3,14 @@ const fs = require('fs')
 let pageName = process.argv.slice(-1)
 let pugTpl = ``
 let tsTpl = `
-import { PageDecor, global, PageConstr, wx } from 'wetype-simple'
+import { Page, wx } from 'wetype-simple'
 
-@PageDecor({
+@Page.decor({
     config: {
 
     }
 })
-class ${pageName} extends PageConstr {
+class ${pageName} extends Page {
 
 }
 `

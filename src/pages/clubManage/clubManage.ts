@@ -1,11 +1,14 @@
 
-import { PageDecor, global, PageConstr, wt } from 'wetype-simple'
+import { Page, wt } from 'wetype-simple'
 
-@PageDecor({
+@Page.decor({
     config: {
 
     }
 })
-class clubManage extends PageConstr {
+class clubManage extends Page {
 
+    onLoad() {
+
+    }
 }
