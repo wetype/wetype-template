@@ -1,4 +1,5 @@
 import { Component } from 'wetype-simple'
+import { TestBehavior } from '../../behaviors/test'
 
 @Component.decor({
     config: {
@@ -7,7 +8,7 @@ import { Component } from 'wetype-simple'
     properties: {
 
     },
-    behaviors: []
+    behaviors: [ TestBehavior ]
 })
 export class List extends Component {
 
