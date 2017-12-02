@@ -19,6 +19,7 @@ const cache = require('gulp-cached')
 const fs = require('fs')
 const imagemin = require('gulp-imagemin')
 const modifyWxml = require('./build/gulp-modify-wxml')
+const modifyWxss = require('./build/gulp-modify-wxss')
 
 gulp.task('ts', () => {
     return tsProject.src()
@@ -51,6 +52,7 @@ gulp.task('less', cb => {
         .pipe(rename({
             extname: '.wxss'
         }))
+        .pipe(modifyWxss())
         .pipe(gulp.dest('dist'))
 })
 
