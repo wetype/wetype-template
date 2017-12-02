@@ -1,6 +1,7 @@
 import { Component } from 'wetype-simple'
 import { TestBehavior } from '../../behaviors/test'
 
+console.log(TestBehavior)
 @Component.decor({
     config: {
         
@@ -8,9 +9,14 @@ import { TestBehavior } from '../../behaviors/test'
     properties: {
 
     },
-    behaviors: [ TestBehavior ]
+    behaviors: [TestBehavior]
 })
 export class List extends Component {
 
+    ggg = 321
+
+    attached() {
+        console.log('hahah')
+    }
 
 }

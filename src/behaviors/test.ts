@@ -2,5 +2,11 @@ import { Behavior } from 'wetype-simple'
 
 @Behavior.decor()
 export class TestBehavior extends Behavior {
-    type = ''
+
+    grr = 123
+
+    attached() {
+        console.log('test attached')
+    }
+
 }

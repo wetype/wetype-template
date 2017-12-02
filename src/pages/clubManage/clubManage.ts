@@ -1,14 +1,15 @@
 
-import { Page, wt } from 'wetype-simple'
+import { Page, wt, wx } from 'wetype-simple'
 
 @Page.decor({
     config: {
 
     }
 })
-class clubManage extends Page {
+class ClubManage extends Page {
 
     onLoad() {
-
+        // wt.px2rpx()
     }
+
 }
