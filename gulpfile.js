@@ -76,13 +76,21 @@ gulp.task('img', () => {
         .pipe(gulp.dest('dist/img'))
 })
 
-gulp.task('default', ['ts', 'pug', 'less', 'copy', 'img'])
-
-const tsWatcher = gulp.watch('src/**/*.ts', ['ts'])
-const pugWatcher = gulp.watch('src/**/*.pug', ['pug'])
-const lessWatcher = gulp.watch('src/**/*.less', ['less'])
-const imgWatcher = gulp.watch('src/img/*', ['img'])
-
-tsWatcher.on('change', e => {
-    console.log('File ' + e.path + ' was ' + e.type + ', running tasks...')
+gulp.task('uglify', () => {
+    gulp.src('dist/**/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('dist'))
 })
+
+gulp.task('watch', () => {
+    const tsWatcher = gulp.watch('src/**/*.ts', ['ts'])
+    const pugWatcher = gulp.watch('src/**/*.pug', ['pug'])
+    const lessWatcher = gulp.watch('src/**/*.less', ['less'])
+    const imgWatcher = gulp.watch('src/img/*', ['img'])
+    
+    tsWatcher.on('change', e => {
+        console.log('File ' + e.path + ' was ' + e.type + ', running tasks...')
+    })
+})
+
+gulp.task('default', ['ts', 'pug', 'less', 'copy', 'img', 'watch'])
