@@ -18,6 +18,7 @@ const copyModules = require('./build/gulp-copy-modules')
 const cache = require('gulp-cached')
 const fs = require('fs')
 const imagemin = require('gulp-imagemin')
+const modifyWxml = require('./build/gulp-modify-wxml')
 
 gulp.task('ts', () => {
     return tsProject.src()
@@ -38,6 +39,7 @@ gulp.task('pug', () => {
             extname: '.wxml'
         }))
         .pipe(flatten())
+        .pipe(modifyWxml())
         .pipe(compileTpl())
         .pipe(gulp.dest('dist'))
 })
