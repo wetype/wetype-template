@@ -1,9 +1,11 @@
 import { App } from 'wetype-simple'
-// import {  } from 'wetype-simple'
 
 @App.decor({
     config: {
         pages: [
+            'login',
+            'activityCreate',
+            'activityDetail',
             'me',
             'clubManage',
             'index',
@@ -18,7 +20,6 @@ import { App } from 'wetype-simple'
 class APP extends App {
 
     onLaunch() {
-        console.log('onLaunch')
     }
 
     onShow() {

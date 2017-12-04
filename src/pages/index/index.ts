@@ -1,5 +1,4 @@
 import { Page, wt } from 'wetype-simple'
-import { testFunc, testFunc2 } from '../../libs/util'
 
 @Page.decor({
     config: {

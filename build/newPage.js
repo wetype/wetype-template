@@ -1,16 +1,21 @@
 const fs = require('fs')
 
 let pageName = process.argv.slice(-1)
+let pageNameCamel = pageName.replace(/(\w)/, (m, $) => $.toUpperCase())
 let pugTpl = ``
 let tsTpl = `
-import { Page, wx } from 'wetype-simple'
+import { Page, wx, wt, types } from 'wetype-simple'
 
 @Page.decor({
     config: {
-
+        navigationBarTitleText: ''
     }
 })
-class ${pageName} extends Page {
+class ${pageNameCamel} extends Page {
+
+    onLoad(options: types.OnloadOptions) {
+
+    }
 
 }
 `
