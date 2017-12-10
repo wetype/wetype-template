@@ -20,7 +20,9 @@ module.exports = function() {
             let config = json.config || {}
             // 若是组件，则自动添加组件配置
             if (isComponent) {
-                config.component = true
+                config = {
+                    component: true
+                }
             }
             if (isPage) {
                 Object.keys(config.usingComponents || {}).forEach(name => {
