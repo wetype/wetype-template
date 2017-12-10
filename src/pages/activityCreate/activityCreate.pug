@@ -5,17 +5,17 @@
                 .weui-cell__hd
                     .weui-label 活动球馆
                 .weui-cell__bd
-                    input.weui-input(placeholder="请输入活动球馆")
+                    input.weui-input(placeholder="请输入活动球馆" bindinput="arenaInput")
             .weui-cell.weui-cell_input
                 .weui-cell__hd
                     .weui-label 人数限制
                 .weui-cell__bd
-                    input.weui-input(type="number" placeholder="请输入人数限制")
+                    input.weui-input(type="number" placeholder="请输入人数限制" bindinput="limitInput")
             .weui-cell.weui-cell_input
                 .weui-cell__hd
                     .weui-label 联系方式
                 .weui-cell__bd
-                    input.weui-input(type="number" placeholder="请输入手机号")
+                    input.weui-input(type="number" placeholder="请输入手机号" bindinput="phoneInput")
             .weui-cell.weui-cell_input
                 .weui-cell__hd
                     .weui-label 日期
@@ -38,20 +38,20 @@
                 .weui-cell__hd
                     .weui-label 收费
                 .weui-cell__bd
-                    input.weui-input(type="number" placeholder="请输入费用")
+                    input.weui-input(type="number" placeholder="请输入费用" bindinput="chargeInput")
             .weui-cell.weui-cell_input
                 .weui-cell__hd
                     .weui-label 最晚报名时间
                 .weui-cell__bd
-                    input.weui-input(type="number" placeholder="请输入最晚报名时间")
+                    input.weui-input(type="number" placeholder="请输入最晚报名时间" bindinput="joinDeadlineInput")
             .weui-cell.weui-cell_input
                 .weui-cell__hd
                     .weui-label.small 取消报名截止时间
                 .weui-cell__bd
-                    input.weui-input(type="number" placeholder="")
+                    input.weui-input(type="number" placeholder="" bindinput="cancelDeadlineInput")
         .weui-cells.weui-cells_after-title
             .weui-cell
                 .weui-cell__bd
-                    textarea.weui-textarea(placeholder="请输入活动介绍" style="height: 3.3em")
+                    textarea.weui-textarea(placeholder="请输入活动介绍" style="height: 3.3em" bindinput="introInput")
                     .weui-textarea-counter 0/200
         button.weui-btn(type="primary" @tap="submit") 提交

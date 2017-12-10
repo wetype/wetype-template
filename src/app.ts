@@ -1,11 +1,11 @@
-import { App } from 'wetype-simple'
+import { App, wt } from 'wetype-simple'
 
 @App.decor({
     config: {
         pages: [
-            'login',
-            'activityCreate',
             'activityDetail',
+            'activityCreate',
+            'login',
             'me',
             'clubManage',
             'index',
@@ -19,7 +19,9 @@ import { App } from 'wetype-simple'
 })
 class APP extends App {
 
-    onLaunch() {
+    async onLaunch() {
+        
+
     }
 
     onShow() {

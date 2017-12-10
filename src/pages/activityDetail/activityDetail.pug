@@ -3,7 +3,7 @@
         .left
             .avatar
                 image(src="./img/lcw.jpg")
-            .name 刘冰心
+            .name {{info.userInfo.nickname}}
         .right 打电话
     .section.date
         .left
@@ -15,4 +15,4 @@
         .right 开始导航
     .section.members
 
-    .signup-btn 立即报名
+    .signup-btn(@tap="signup") 立即报名

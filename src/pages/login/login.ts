@@ -23,17 +23,14 @@ class Login extends Page {
         
         let { code } = await wt.login()
         
-        // let res: LoginRes = await post('/api/auth/login', { code })
-
-        let res: LoginRes = await handleReq({ key: 'login' })
-            .handle(post('/api/auth/login', { code }))
+        let res: LoginRes = (await post('/api/auth/login', { code })).data
 
         let session = res.msg.session
         
         await wt.setStorage({ key: 'session', data: session})
 
-        console.log('session保存成功')
-
+        let saveRes = await post('/api/user/set-info', { ...info.detail.userInfo })
+        
         wx.navigateBack()
 
     }
