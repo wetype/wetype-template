@@ -1,0 +1,40 @@
+mixin weui-list(title, after)
+    .weui-cell
+        .weui-cell__bd= title
+        .weui-cell__ft= after
+
+mixin weui-list-avatar(imgUrl, title, after)
+    .weui-cell
+        .weui-cell__hd
+            image.avatar(src=imgUrl)
+        .weui-cell__bd= title
+        .weui-cell__ft= after
+
+mixin weui-list-arrow(url, title, after, bindtap)
+    if bindtap
+        .weui-cell.weui-cell_access(url=url hover-class="weui-cell_activ" @tap=bindtap)
+            .weui-cell__bd= title
+            .weui-cell__ft.weui-cell__ft_in-access= after
+    else
+        navigator.weui-cell.weui-cell_access(url=url hover-class="weui-cell_activ")
+            .weui-cell__bd= title
+            .weui-cell__ft.weui-cell__ft_in-access= after
+
+
+mixin weui-list-avatar-arrow(imgUrl, url, title, after, bindtap)
+    if bindtap
+        .weui-cell.weui-cell_access(url=url hover-class="weui-cell_activ" @tap=bindtap)
+            .weui-cell__hd
+                    image.avatar(src=imgUrl)
+            .weui-cell__bd= title
+            .weui-cell__ft.weui-cell__ft_in-access= after
+    else
+        navigator.weui-cell.weui-cell_access(url=url hover-class="weui-cell_activ")
+            .weui-cell__hd
+                    image.avatar(src=imgUrl)
+            .weui-cell__bd= title
+            .weui-cell__ft.weui-cell__ft_in-access= after
+
+mixin weui-cells
+    .weui-cells.weui-cells_after-title
+        block

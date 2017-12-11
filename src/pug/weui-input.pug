@@ -1,0 +1,77 @@
+mixin weui-cells
+    .weui-cells.weui-cells_after-title
+        block
+
+mixin weui-input(title, opt)
+    .weui-cell.weui-cell_input
+        .weui-cell__hd
+            .weui-label=title
+        .weui-cell__bd
+            input.weui-input(placeholder=opt.ph bindinput=opt.e)
+
+mixin weui-input-phone-code(title, op)
+    .weui-cell.weui-cell_input.weui-cell_vcode
+        .weui-cell__hd
+            .weui-label=title
+        .weui-cell__bd
+            input.weui-input(placehodler=op.ph bindinput=op.e)
+        .weui-cell__ft
+            .weui-vcode-btn(@tap=op.getCode)=op.btnText
+
+mixin weui-input-date-picker(title, op)
+    .weui-cell.weui-cell_input
+        .weui-cell__hd
+            .weui-label=title
+        .weui-cell__bd
+            picker(mode="date" value=op.value start=op.start end=op.end  bindchange=op.change)
+                .weui-input=op.value
+
+mixin weui-input-time-picker(title, op)
+    .weui-cell.weui-cell_input
+        .weui-cell__hd
+            .weui-label=title
+        .weui-cell__bd
+            picker(mode="time" value=op.value start="05:00" end="23:59" bindchange=op.change)
+                .weui-input=op.value
+
+mixin weui-input-switch(title, value)
+    .weui-cell.weui-cell_switch
+        .weui-cell__bd=title
+        .weui-cell__ft
+            switch(checked bindchange=change)
+
+mixin weui-input-textarea(op)
+    .weui-cell
+        .weui-cell__bd
+            textarea.weui-textarea(placeholder=op.ph bindinput=input style="height: 13.3em;")
+            .weui-textarea-counter=counterText
+
+mixin weui-input-select-before(op)
+    .weui-cell.weui-cell_select
+        .weui-cell__bd
+            picker(value=op.value range=range bindchange=change)
+                .weui-select=rangeEl
+
+mixin weui-input-select(op)
+    .weui-cell.weui-cell_select
+        .weui-cell__bd
+            picker(value=op.value range=op.range change=change)
+                .weui-select=rangeEl
+
+mixin weui-input-select-title(op)
+    .weui-cell.weui-cell_select
+        .weui-cell__hd.weui-cell__hd_in-select-after
+            .weui-label=op.label
+        .weui-cell__bd
+            picker(value=op.value range=op.range change=change)
+                .weui-select.weui-select_in-select-after=rangeEl
+
+mixin weui-input-agreement(op)
+    checkbox-group(change=op.change)
+        label.weui-agree(for="weuiAgree")
+            .weui-agree__text
+                checkbox.weui-agree__checkbox#weuiAgree(value=op.value checked=op.checked)
+                .weui-agree__checkbox-icon
+                    icon.weui-agree__checkbox-icon-check(type="success_no_circle" size="9" :if=op.checked)
+                | 同意并阅读
+                navgator.weui-agree__link(url=op.url)=op.agreementName

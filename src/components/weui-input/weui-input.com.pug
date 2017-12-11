@@ -1,0 +1,6 @@
+.weui-cells.weui-cells_after-title
+    .weui-cell.weui-cell_input
+        .weui-cell__hd(:for="el in data")
+            .weui-label {{el.title}}
+        .weui-cell__bd
+            input.weui-input(placeholder="hihi" :bindinput="el.inputMethod")

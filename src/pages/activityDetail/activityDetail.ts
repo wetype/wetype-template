@@ -6,13 +6,18 @@ import { post, get } from '../../libs/util'
     config: {
         navigationBarTitleText: '活动详情',
         usingComponents: {
-            'weui-list': 'weui-list'
+            'weui-list': 'weui-list',
+            'weui-input': 'weui-input'
         }
     },
 })
 class ActivityDetail extends Page {
 
+
     info
+    btnText = '获取验证码'
+    date = '2017-12-12'
+    time = '08:00'
 
     listData = [
         {
@@ -23,9 +28,16 @@ class ActivityDetail extends Page {
         }
     ]
 
+    inputData = [
+        {
+            title: 'ABC',
+            inputMethod: 'bindinput'
+        }
+    ]
+
     async onLoad() {
         let location = await wt.getLocation({})
-        let res = await get('/api/activity/index', { 
+        let res = await get('/api/activity/index', {
             activity_id: '5', 
             lat: location.latitude,
             lng: location.longitude
@@ -34,8 +46,20 @@ class ActivityDetail extends Page {
         this.setData({ info: res.data.msg })
     }
 
+    bindinput() {
+        console.log(232)
+    }
+
+    getCode() {
+        console.log('getCode')
+    }
+
     async signup() {
         let res = await post('/api/activity/join', { activity_id: '5' })
+        console.log(res)
+    }
+
+    switchChange(res) {
         console.log(res)
     }
 

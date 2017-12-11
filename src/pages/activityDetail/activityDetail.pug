@@ -1,3 +1,5 @@
+include ../../pug/weui-list
+include ../../pug/weui-input
 .page 
     .section.header
         .left
@@ -15,6 +17,18 @@
         .right 开始导航
     .section.members
     
-    weui-list(data="{{listData}}")
+    //- weui-list(data="{{listData}}")
+    +weui-cells
+        +weui-list('abc', 'cba')
+        +weui-list-arrow('./index', 'title', 'after', 'goodclick')
 
+    //- weui-input(:data="inputData")
+    +weui-cells
+        +weui-input('手机号', { ph: '请输入手机号', e: 'eee' })
+        +weui-input-phone-code('手机号', { ph: '请输入手机号', e: 'aaa', btnText: '{{btnText}}', getCode: 'getCode' })
+        +weui-input-date-picker('日期', { value: '{{date}}', start: '2017-12-01', end: '2017-12-30' })
+        +weui-input-time-picker('时间', { value: '{{time}}', change: 'switchChange' })
+        +weui-input-switch('开关')
+        +weui-input-textarea({ ph: '你的留言', counterText: '0/200' })
+        +weui-input-phone({ value: '{{phonePicked}}' })
     .signup-btn(@tap="signup") 立即报名
