@@ -30,5 +30,5 @@ include ../../pug/weui-input
         +weui-input-time-picker('时间', { value: '{{time}}', change: 'switchChange' })
         +weui-input-switch('开关')
         +weui-input-textarea({ ph: '你的留言', counterText: '0/200' })
-        +weui-input-phone({ value: '{{phonePicked}}' })
+        +weui-input-phone-code('abc', { value: '{{phonePicked}}' })
     .signup-btn(@tap="signup") 立即报名
