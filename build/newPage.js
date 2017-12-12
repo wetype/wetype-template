@@ -1,6 +1,7 @@
 const fs = require('fs')
 
-let pageName = process.argv.slice(-1)
+let pageName = process.argv.slice(-1)[0]
+console.log(pageName)
 let pageNameCamel = pageName.replace(/(\w)/, (m, $) => $.toUpperCase())
 let pugTpl = ``
 let tsTpl = `

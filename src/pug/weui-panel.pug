@@ -1,0 +1,48 @@
+mixin weui-panel
+    .weui-panel.weui-panel__access
+        block
+
+
+mixin weui-panel-hd(title)
+    .weui-panel__hd=title
+
+mixin weui-panel-bd
+    .weui-panel__bd
+        block
+
+mixin weui-panel-item-img(op)
+    navigator.weui-media-box.weui-media-box_appmsg(url=url hover-class="weui-cell_active")
+        .weui-media-box__hd.weui-media-box__hd_in-appmsg
+            image.weui-media-box__thumb(src=op.imgUrl)
+        .weui-media-box__bd.weui-media-box__bd_in-appmsg
+            .weui-media-box__title=op.title
+            .weui-media-box__desc=op.desc
+
+mixin weui-panel-item-text(op)
+    .weui-media-box.weui-media-box_text
+        .weui-media-box__title.weui-media-box__title_in-text=op.title
+        .weui-media-box__desc=op.desc
+
+mixin weui-panel-footer
+    .weui-panel__ft
+        block
+
+mixin weui-panel-footer-list(title)
+    .weui-cell.weui-cell_access.weui-cell_link
+        .weui-cell__bd=title
+        .weui-cell__ft.weui-cell__ft_in-access
+
+mixin weui-panel-source(op)
+    .weui-media-box.weui-media-box_text
+        .weui-media-box__title.weui-media-box__title_in_text=op.title
+        .weui-media-box__desc=op.desc
+        
+        block
+
+mixin weui-panel-source-info(op)
+    .weui-media-box__info
+        .weui-media-box__info__meta=op[0]
+        .weui-media-box__info__meta=op[1]
+        .weui-media-box__info__meta.weui-media-box__info__meta_extra=op[2]
+    
+

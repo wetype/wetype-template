@@ -13,7 +13,6 @@ import { post, get } from '../../libs/util'
 })
 class ActivityDetail extends Page {
 
-
     info
     btnText = '获取验证码'
     date = '2017-12-12'
