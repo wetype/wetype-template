@@ -3,19 +3,20 @@
  * 
  */
 const _ = require('lodash')
+const Entities = require('html-entities').XmlEntities
+const entities = new Entities
 module.exports = class CompilerTpl {
 
     constructor() {
-        // let tplUrl = path.relative(src, templateUrl)
         this.templateUrl = ''
         this.prefix = ''
         this.matchTag = /([\w\-]+)\:\s?([\s\w\+\-\*\/\&\|_\.]+)\,?/g
     }
 
     render(tplStr, prefix = '') {
-        let reg = /\<([\w\s\'\"\-\@\#\:\(\)\.\,\=\&\|\+\/\*\{\}]+)\>/g
-        let reg2 = /([\w\:\@\#-]+)=\"([\w\s\,\.\(\)-\=\&\|\+\/\*\{\}\:]+)\"/g
-        let reg3 = /([\w\:\@\#-]+)=\"([\w\s\,\.\(\)-\=\&\|\+\/\*\{\}\:]+)\"/
+        let reg = /<([\w\W\S\s]+?)\/?>/g
+        let reg2 = /([\w\d-\:@#]+?)="([\w\s\,\.\(\)-\=\&\|\+\/\*\{\}\:]+)\"/g
+        let reg3 = /([\w\d-\:@#]+?)="([\w\s\,\.\(\)-\=\&\|\+\/\*\{\}\:]+)\"/
 
         return tplStr.replace(reg, (match, $) => {
             let matched = $.match(reg2)
@@ -32,6 +33,7 @@ module.exports = class CompilerTpl {
                 }
 
                 let attrs = Object.keys(pairs)
+                // console.log(attrs)
                 let _class = pairs[':class']
                 let _for = pairs[':for']
                 let _if = pairs[':if']
@@ -86,8 +88,8 @@ module.exports = class CompilerTpl {
                     pairs[key.slice(1)] = `{{${pairs[key]}}}`
                     delete pairs[key]
                 })
-
-                let res = _.map(pairs, (v, k) => `${k}="${v}"`).join(' ')
+                // console.log(pairs)
+                let res = _.map(pairs, (v, k) => `${k}="${entities.decode(v)}"`).join(' ')
                 let selfClose = isSelfCloseTag ? ' /' : ''
                 return `<${tagName} ${res}${selfClose}>`
             }

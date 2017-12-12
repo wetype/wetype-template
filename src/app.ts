@@ -3,6 +3,7 @@ import { App, wt } from 'wetype-simple'
 @App.decor({
     config: {
         pages: [
+            'search',
             'activityDetail',
             'activityCreate',
             'login',

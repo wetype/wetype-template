@@ -29,6 +29,7 @@
     "gulp-rollup": "^2.15.0",
     "gulp-typescript": "^3.2.3",
     "gulp-uglify": "^3.0.0",
+    "html-entities": "^1.2.1",
     "less": "^2.7.3",
     "mime-types": "^2.1.17",
     "pug": "^2.0.0-rc.4",

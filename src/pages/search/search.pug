@@ -1,0 +1,16 @@
+.page
+    .page__bd
+        .weui-search-bar
+            .weui-search-bar__form
+                .weui-search-bar__box
+                    icon.weui-icon-search_in-box(type="search" size="14")
+                    input.weui-search-bar__input(type="text" placehoader="搜索" :value="inputVal" :focus="true" bindinput="onInput")
+                    .weui-icon-clear(:if="inputVal.length > 0" bindtap="clearInput")
+                        icon(type="clear" size="14")
+                    label.weui-search-bar__label(:hidden="" bindtap="showInput")
+                        icon.weui-icon-search(type="search" size="14")
+                        .weui-search-bar__text 搜索
+        .weui-cells.search-result(:if="inputVal.length > 0")
+            navigator.weui-cell(url="" hover-class="weui-cell_active")
+                .weui-cell_bd
+                    view 实时搜索文本
