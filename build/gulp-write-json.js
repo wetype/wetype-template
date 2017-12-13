@@ -24,7 +24,7 @@ module.exports = function() {
                     component: true
                 }
             }
-            if (isPage) {
+            else if (isPage) {
                 Object.keys(config.usingComponents || {}).forEach(name => {
                     let v = config.usingComponents[name]
                     config.usingComponents[name] = `./${v}.com`

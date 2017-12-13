@@ -1,10 +1,12 @@
 const fs = require('fs')
 
-let pageName = process.argv.slice(-1)[0]
-console.log(pageName)
-let pageNameCamel = pageName.replace(/(\w)/, (m, $) => $.toUpperCase())
+let [type, name] = process.argv.slice(-2)
+console.log(type)
+
+let nameCamel = name.replace(/(\w)/, (m, $) => $.toUpperCase())
 let pugTpl = ``
-let tsTpl = `
+let lessTpl = ``
+let pageTsTpl = `
 import { Page, wx, wt, types } from 'wetype-simple'
 
 @Page.decor({
@@ -12,7 +14,7 @@ import { Page, wx, wt, types } from 'wetype-simple'
         navigationBarTitleText: ''
     }
 })
-class ${pageNameCamel} extends Page {
+class ${nameCamel} extends Page {
 
     onLoad(options: types.OnloadOptions) {
 
@@ -20,8 +22,25 @@ class ${pageNameCamel} extends Page {
 
 }
 `
-let lessTpl = ``
-fs.mkdirSync(`src/pages/${pageName}`)
-fs.writeFileSync(`src/pages/${pageName}/${pageName}.ts`, tsTpl, `utf-8`)
-fs.writeFileSync(`src/pages/${pageName}/${pageName}.pug`, pugTpl, `utf-8`)
-fs.writeFileSync(`src/pages/${pageName}/${pageName}.less`, lessTpl, `utf-8`)
+let componentTsTpl = `
+import { Component, wx, wt, types } from 'wetype-simple'
+
+@Component.decor({
+    config: {}
+})
+class ${nameCamel} extends Component {
+
+
+
+}
+
+`
+
+let tsTpl = type === 'page' ? tsTpl : componentTsTpl
+
+let fileName = type === 'page' ? name : name + '.com'
+
+fs.mkdirSync(`src/${type}s/${name}`)
+fs.writeFileSync(`src/${type}s/${name}/${fileName}.ts`, tsTpl, `utf-8`)
+fs.writeFileSync(`src/${type}s/${name}/${fileName}.pug`, pugTpl, `utf-8`)
+fs.writeFileSync(`src/${type}s/${name}/${fileName}.less`, lessTpl, `utf-8`)

@@ -1,1 +1,16 @@
-mixin 
+mixin weui-search-bar
+    .weui-search-bar
+        .weui-search-bar__form
+            .weui-search-bar__box
+                icon.weui-icon-search_in-box(type="search" size="14")
+                input.weui-search-bar__input(type="text" placehoader="搜索" :value="inputVal" :focus="inputShowed" @input="onInput")
+                .weui-icon-clear(:if="inputVal.length > 0" bindtap="clearInput")
+                    icon(type="clear" size="14")
+                label.weui-search-bar__label(:hidden="inputShowed" @tap="showInput")
+                    icon.weui-icon-search(type="search" size="14")
+                    .weui-search-bar__text 搜索
+        .weui-search-bar__cancel-btn(:hidden="!inputShowed" #tap="hideInput") 取消
+
+mixin weui-search-result
+    .weui-cells.search-result(:if="inputVal.length > 0")
+        block

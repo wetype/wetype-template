@@ -3,7 +3,10 @@ import { Page, wx, wt, types } from 'wetype-simple'
 
 @Page.decor({
     config: {
-        navigationBarTitleText: ''
+        navigationBarTitleText: '',
+        usingComponents: {
+            'weui-search-bar': 'search-bar'
+        }
     }
 })
 class Search extends Page {

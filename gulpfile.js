@@ -86,7 +86,7 @@ gulp.task('uglify', () => {
         .pipe(gulp.dest('dist'))
 })
 
-gulp.task('watch', () => {
+gulp.task('w', () => {
     const tsWatcher = gulp.watch('src/**/*.ts', ['ts'])
     const pugWatcher = gulp.watch('src/**/*.pug', ['pug'])
     const lessWatcher = gulp.watch('src/**/*.less', ['less'])
@@ -97,4 +97,4 @@ gulp.task('watch', () => {
     })
 })
 
-gulp.task('default', ['ts', 'pug', 'less', 'copy', 'img', 'watch'])
+gulp.task('default', ['ts', 'pug', 'less', 'copy', 'img', 'w'])
