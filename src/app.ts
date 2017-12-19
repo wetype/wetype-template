@@ -4,6 +4,7 @@ import { App, wt } from 'wetype-simple'
     config: {
         pages: [
             'index',
+            'my-location',
             'search',
             'activityDetail',
             'activityCreate',

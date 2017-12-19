@@ -10,7 +10,7 @@ include ../../pug/weui-mixins
                         .weui-navbar__title=el.title
                     .weui-navbar__slider(style="left: {{sliderLeft + sliderOffset}}px")
             .weui-tab__panel
-        +weui-search-bar
+        +weui-search-bar('搜索')
         scroll-view.weui-panel.weui-panel__access(
             :scroll-y="true"
             :show="!inputVal"

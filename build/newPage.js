@@ -36,7 +36,7 @@ class ${nameCamel} extends Component {
 
 `
 
-let tsTpl = type === 'page' ? tsTpl : componentTsTpl
+let tsTpl = type === 'page' ? pageTsTpl : componentTsTpl
 
 let fileName = type === 'page' ? name : name + '.com'
 
