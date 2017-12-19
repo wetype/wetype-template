@@ -1,11 +1,13 @@
 import { Page, wt, wx, types } from 'wetype-simple'
+import { SearchBarMixin } from '../../mixins/searchBar'
 
 @Page.decor({
     config: {
         enablePullDownRefresh: true,
         backgroundTextStyle: 'dark',
-        disableScroll: true
-    }
+        disableScroll: true,
+    },
+    mixins: [SearchBarMixin]
 })
 class Index extends Page {
 
@@ -13,9 +15,6 @@ class Index extends Page {
     sliderLeft = 0
     sliderOffset = 0
     windowHeight = 0
-
-    inputShowed = false
-    inputVal = ''
 
     async onLoad() {
         let systemInfo = wx.getSystemInfoSync()
@@ -36,23 +35,6 @@ class Index extends Page {
 
     loadMore() {
         console.log('loadmore')
-    }
-
-    showInput() {
-        this.inputShowed = true
-    }
-
-    hideInput() {
-        this.inputShowed = false
-        this.inputVal = ''
-    }
-
-    clearInput() {
-        this.inputVal = ''
-    }
-
-    onInput(e: types.WxEvent) {
-        this.inputVal = e.detail.value
     }
 
 }

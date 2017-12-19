@@ -44,6 +44,7 @@ module.exports = function() {
 
 function rmBehaviorArr(str) {
     return str.replace(/behaviors:\s?\[.+?\]/, '')
+    .replace(/mixins:\s?\[.+?\]/, '')
 }
 
 function getConfig(str) {
