@@ -20,6 +20,7 @@ const fs = require('fs')
 const imagemin = require('gulp-imagemin')
 const modifyWxml = require('./build/gulp-modify-wxml')
 const modifyWxss = require('./build/gulp-modify-wxss')
+const plumber = require('gulp-plumber')
 
 gulp.task('ts', () => {
     return tsProject.src()
@@ -34,7 +35,8 @@ gulp.task('ts', () => {
 })
 
 gulp.task('pug', () => {
-    gulp.src('src/**/*.pug')
+    gulp.src('src/**/index.pug')
+        .pipe(plumber())
         .pipe(pug())
         .pipe(rename({
             extname: '.wxml'
@@ -47,6 +49,7 @@ gulp.task('pug', () => {
 
 gulp.task('less', cb => {
     return gulp.src('src/**/*.less')
+        .pipe(plumber())
         .pipe(less())
         .pipe(flatten())
         .pipe(rename({
