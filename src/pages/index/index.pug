@@ -1,8 +1,33 @@
 //- wxs(src="./util.wxs" module="util")
-
-view.hi
-    view.ha(:if="abc" :class="{ abc: abc.length }" @tap="click") gaga
-    view(:for="el in ddd")
-        //- view {{util(el)}}
-    list
-    view hello
+include ../../pug/weui-mixins
+.page
+    +page-bd
+        - var navbars = [{title: '成都'}, { title: '今天' }, { title: '明天' }, { title: '后天' }]
+        .weui-tab
+            .weui-navbar
+                each el, i in navbars
+                    .weui-navbar__item(@tap="navbarTap" data-index=i :class="{ 'weui-bar__item_on': currentTabIndex === " + i + " }")
+                        .weui-navbar__title=el.title
+                    .weui-navbar__slider(style="left: {{sliderLeft + sliderOffset}}px")
+            .weui-tab__panel
+        +weui-search-bar
+        scroll-view.weui-panel.weui-panel__access(
+            :scroll-y="true"
+            :show="!inputVal"
+            :enable-back-to-top="true"
+            bindscrolltolower="loadMore"
+            style="height: {{windowHeight - 98}}px")
+            +weui-panel-bd
+                - var list = [1,2,3,4,5,5,5,5,5,]
+                each el in list
+                    navigator.weui-media-box.weui-media-box_appmsg(url=url hover-class="weui-cell_active")
+                        .weui-media-box__hd.weui-media-box__hd_in-appmsg
+                            image.weui-media-box__thumb(src="./img/lcw.jpg")
+                        .weui-media-box__bd.weui-media-box__bd_in-appmsg
+                            .weui-media-box__title 西电羽毛球俱乐部
+                            .weui-media-box__desc 某某某球馆 0.1km
+                            .weui-media-box__desc
+                                .left 16:00-18:00 报名中
+                                .right 
+                                    text 8/12人
+        

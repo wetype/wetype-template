@@ -1,0 +1,11 @@
+mixin weui-tab(navbars, tap)
+    .weui-tab
+        .weui-navbar
+            each el, i in navbars
+                .weui-navbar__item(@tap=tap data-index=i)
+                    .weui-navbar__title=el.title
+                .weui-navbar__slider(style="left: 0")
+        .weui-tab__panel
+            block
+
+//- mixin weui-tab-panel

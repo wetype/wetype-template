@@ -24,6 +24,7 @@ const plumber = require('gulp-plumber')
 
 gulp.task('ts', () => {
     return tsProject.src()
+        .pipe(plumber())
         .pipe(cache('ts'))
         .pipe(tsProject())
         .js
@@ -35,7 +36,7 @@ gulp.task('ts', () => {
 })
 
 gulp.task('pug', () => {
-    gulp.src('src/**/index.pug')
+    gulp.src('src/**/*.pug')
         .pipe(plumber())
         .pipe(pug())
         .pipe(rename({

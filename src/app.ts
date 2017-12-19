@@ -3,13 +3,13 @@ import { App, wt } from 'wetype-simple'
 @App.decor({
     config: {
         pages: [
+            'index',
             'search',
             'activityDetail',
             'activityCreate',
             'login',
             'me',
             'clubManage',
-            'index',
         ],
         window: {
             backgroundTextStyle: 'light',

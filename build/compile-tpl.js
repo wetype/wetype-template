@@ -15,8 +15,8 @@ module.exports = class CompilerTpl {
 
     render(tplStr, prefix = '') {
         let reg = /<([\w\W\S\s]+?)\/?>/g
-        let reg2 = /([\w\d-\:@#]+?)="([\w\s\,\.\(\)-\=\&\|\+\/\*\{\}\:\!]+)\"/g
-        let reg3 = /([\w\d-\:@#]+?)="([\w\s\,\.\(\)-\=\&\|\+\/\*\{\}\:\!]+)\"/
+        let reg2 = /([\w\d-\:@#]+?)="([\w\s\,\.\(\)-\=\&\|\+\/\*\{\}\:\!'#]+)\"/g
+        let reg3 = /([\w\d-\:@#]+?)="([\w\s\,\.\(\)-\=\&\|\+\/\*\{\}\:\!'#]+)\"/
 
         return tplStr.replace(reg, (match, $) => {
             let matched = $.match(reg2)
@@ -64,7 +64,7 @@ module.exports = class CompilerTpl {
                 }
 
                 if (_show && !_hide) {
-                    pairs['hidden'] = `{{!${_show}}}`
+                    pairs['hidden'] = `{{!(${_show})}}`
                     delete pairs[':show']
                 }
                 else if (_show && _hide) {
@@ -110,9 +110,9 @@ module.exports = class CompilerTpl {
     handleClass(str) {
         // 先去掉左右的大括号
         str = str.replace(/\{|\}/g, '')
-        let reg = /([\w\-]+)\:\s?([\s\w\+\-\*\/\&\|_\.\!]+)\,?/g
+        let reg = /([\w\-'"_]+)\:\s?([\s\w\+\-\*\/\&\|_\.\!\=]+)\,?/g
         return str.replace(reg, (match, className, expression) =>
-            `{{${expression} ? '${className}' : ''}} `
+            `{{${expression} ? '${className.replace(/'/g, '')}' : ''}} `
         )
     }
 
