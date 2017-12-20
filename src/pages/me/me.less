@@ -1,11 +1,14 @@
+@import "../../style/color-vars.less";
+@import "../../style/icon.less";
+
 page {
     background-color: #fafafa;
 }
 .page {
     .userinfo {
-        padding: 30rpx 40rpx;
+        padding: 50rpx 40rpx;
         display: flex;
-        background-color: #fff;
+        background-color: @mainColor1;
         border-bottom: 1px solid #f0f0f0;
         .left {
             display: flex;
@@ -13,7 +16,7 @@ page {
                 image {
                     width: 100rpx;
                     height: 100rpx;
-                    border-radius: 50%;
+                    border-radius: 26rpx;
                     vertical-align: middle;
                 }
             }
@@ -21,6 +24,7 @@ page {
                 font-size: 36rpx;
                 align-self: center;
                 margin-left: 30rpx;
+                color: #fff;
             }
         }
         .right {
@@ -40,26 +44,47 @@ page {
             }
         }
     }
-    .info {
+    .section {
+        margin-bottom: 30rpx; 
         background-color: #fff;
-        display: flex;
-        text-align: center;
-        padding: 36rpx 0;
-        .item {
-            flex: 1;
+        &.info {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            .name {
-                font-size: 24rpx;
+            text-align: center;
+            padding: 36rpx 0;
+            .item {
+                flex: 1;
+                align-items: center;
+                font-size: 40rpx;
                 color: #111;
+                .top {
+                    font-weight: bold;
+                }
+                .name {
+                    color: #111;
+                    font-size: 24rpx;
+                }
             }
-            .after {
-                font-size: 48rpx;
-                color: #111;
-                font-weight: bold;
-                margin-left: 50rpx;
+        }
+        &.btns {
+            display: flex;
+            text-align: center;
+            padding: 36rpx 0;
+            .item {
+                flex: 1;
+                .icon {
+                    width: 60rpx;
+                    height: 60rpx;
+                }
             }
         }
     }
 }
+
+// .page {
+//     .weui-media-box__bd {
+//         overflow: hidden;
+//         .right {
+//             float: right;
+//         }
+//     }
+// }

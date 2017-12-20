@@ -4,7 +4,10 @@ let [type, name] = process.argv.slice(-2)
 console.log(type)
 
 let nameCamel = name.replace(/(\w)/, (m, $) => $.toUpperCase())
-let pugTpl = ``
+let pugTpl = `
+    include ../../pug/weui-mixins
+    
+`
 let lessTpl = ``
 let pageTsTpl = `
 import { Page, wx, wt, types } from 'wetype-simple'

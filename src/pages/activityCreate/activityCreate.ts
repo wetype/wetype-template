@@ -5,7 +5,7 @@ import param from 'jquery-param'
 
 @Page.decor({
     config: {
-
+        navigationBarTitleText: '创建活动'
     }
 })
 class ActivityCreate extends Page {

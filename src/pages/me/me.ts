@@ -3,24 +3,21 @@ import { wt, wx, Page } from 'wetype-simple'
 
 @Page.decor({
     config: {
-        usingComponents: {
-            list: 'list'
-        }
+        navigationBarTitleText: '我的',
+        disableScroll: true
     }
 })
-class me extends Page {
-
-    bb = 2
+class Me extends Page {
 
     onLoad() {
-        this.setDataAsync({
-            b: 3
-        })
+        
+
         
     }
 
     edit() {
-        console.log('edit')
+
+
     }
 
 }

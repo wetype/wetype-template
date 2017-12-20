@@ -5,6 +5,18 @@
     transition: left 0.3s;
 }
 
+.weui-navbar__item {
+    &:first-child .weui-navbar__title:before {
+        content: '';
+        width: 35rpx;
+        height: 35rpx;
+        vertical-align: text-bottom;
+        margin-right: 6rpx;
+        .icon();
+        .index-location();
+    }
+}
+
 
 .weui-media-box__desc + .weui-media-box__desc {
     margin-top: 8rpx;
@@ -41,6 +53,7 @@
         height: 60rpx;
         margin: 0 auto;
         margin-top: 20rpx;
+        display: block;
     }
 }
 
