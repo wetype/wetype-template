@@ -3,7 +3,7 @@ mixin weui-search-bar(ph)
         .weui-search-bar__form
             .weui-search-bar__box
                 icon.weui-icon-search_in-box(type="search" size="14")
-                input.weui-search-bar__input(type="text" placehoader=ph :value="inputVal" :focus="inputShowed" @input="onInput")
+                input.weui-search-bar__input(type="text" placeholder=ph :value="inputVal" :focus="inputShowed" @input="onInput")
                 .weui-icon-clear(:if="inputVal.length > 0" bindtap="clearInput")
                     icon(type="clear" size="14")
                 label.weui-search-bar__label(:hidden="inputShowed" @tap="showInput")
