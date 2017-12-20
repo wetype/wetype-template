@@ -15,8 +15,8 @@ module.exports = class CompilerTpl {
 
     render(tplStr, prefix = '') {
         let reg = /<([\w\W\S\s]+?)\/?>/g
-        let reg2 = /([\w\d-\:@#]+?)="([\w\s\,\.\(\)-\=\&\|\+\/\*\{\}\:\!'#]+)\"/g
-        let reg3 = /([\w\d-\:@#]+?)="([\w\s\,\.\(\)-\=\&\|\+\/\*\{\}\:\!'#]+)\"/
+        let reg2 = /([\w\d-\:@#]+?)="([\w\s\,\.\(\)-\=\&\|\+\/\*\{\}\:\!'#^\u4e00-\u9fa5]+)\"/g
+        let reg3 = /([\w\d-\:@#]+?)="([\w\s\,\.\(\)-\=\&\|\+\/\*\{\}\:\!'#^\u4e00-\u9fa5]+)\"/
 
         return tplStr.replace(reg, (match, $) => {
             let matched = $.match(reg2)

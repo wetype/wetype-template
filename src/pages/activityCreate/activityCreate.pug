@@ -1,4 +1,6 @@
+include ../../pug/weui-mixins
 .page
+    +page-title('创建活动')
     .page__bd
         .weui-cells.weui-cells_after-title
             .weui-cell.weui-cell_input
@@ -46,12 +48,14 @@
                     input.weui-input(type="number" placeholder="请输入最晚报名时间" bindinput="joinDeadlineInput")
             .weui-cell.weui-cell_input
                 .weui-cell__hd
-                    .weui-label.small 取消报名截止时间
+                    .weui-label 取消报名截止
                 .weui-cell__bd
                     input.weui-input(type="number" placeholder="" bindinput="cancelDeadlineInput")
+        +weui-cell-title('活动介绍')
         .weui-cells.weui-cells_after-title
             .weui-cell
                 .weui-cell__bd
                     textarea.weui-textarea(placeholder="请输入活动介绍" style="height: 3.3em" bindinput="introInput")
                     .weui-textarea-counter 0/200
-        button.weui-btn(type="primary" @tap="submit") 提交
+        +page-bd-spacing
+            button.weui-btn(type="primary" @tap="submit") 提交

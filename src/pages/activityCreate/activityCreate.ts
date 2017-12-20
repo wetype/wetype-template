@@ -24,10 +24,10 @@ class ActivityCreate extends Page {
     async onLoad() {
         let location = await wt.getLocation({})
 
-        let res = await get('/api/common/get-arenas', {
-            lat: location.latitude,
-            lng: location.longitude
-        })
+        // let res = await get('/api/common/get-arenas', {
+        //     lat: location.latitude,
+        //     lng: location.longitude
+        // })
 
     }
 
