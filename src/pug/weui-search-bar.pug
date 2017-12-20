@@ -12,5 +12,5 @@ mixin weui-search-bar(ph)
         .weui-search-bar__cancel-btn(:hidden="!inputShowed" #tap="hideInput") 取消
 
 mixin weui-search-result
-    .weui-cells.search-result(:if="inputVal.length > 0")
+    .weui-cells.search-result(:show="inputVal.length > 0")
         block

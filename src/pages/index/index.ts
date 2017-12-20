@@ -26,7 +26,7 @@ class Index extends Page {
     async navbarTap(res: types.WxEvent) {
         let { index } = res.currentTarget.dataset
         if (index === '0') {
-
+            wx.navigateTo({ url: 'my-location' })
         } else {
             this.currentTabIndex = parseInt(index)
             this.sliderOffset = res.currentTarget.offsetLeft
