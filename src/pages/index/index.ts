@@ -6,6 +6,7 @@ import { SearchBarMixin } from '../../mixins/searchBar'
         enablePullDownRefresh: true,
         backgroundTextStyle: 'dark',
         disableScroll: true,
+        navigationBarTitleText: '活动列表'
     },
     mixins: [SearchBarMixin]
 })
