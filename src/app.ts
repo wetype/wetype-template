@@ -4,13 +4,14 @@ import { App, wt } from 'wetype-simple'
     config: {
         pages: [
             'index',
+            'discovery',
             'my-location',
             'search',
             'activityDetail',
             'activityCreate',
             'login',
             'me',
-            'clubManage',
+            'admin-club-manage',
         ],
         window: {
             backgroundTextStyle: 'light',

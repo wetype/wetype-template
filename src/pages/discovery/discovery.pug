@@ -1,0 +1,13 @@
+include ../../pug/weui-mixins
+    
+.page
+    +page-bd
+        - var navbars = [{title: '同城'}, { title: '关注' }]
+        .weui-tab
+            .weui-navbar
+                each el, i in navbars
+                    .weui-navbar__item(@tap="navbarTap"
+                        data-index=i :class="{ 'weui-bar__item_on': currentTabIndex === " + i + " }")
+                        .weui-navbar__title=el.title
+                    .weui-navbar__slider(style="left: {{sliderLeft + sliderOffset}}px")
+            .weui-tab__panel

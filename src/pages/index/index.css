@@ -19,9 +19,6 @@
 .icon.index-location {
   background-image: url('img/location.png');
 }
-.weui-navbar__slider {
-  transition: left 0.3s;
-}
 .weui-navbar__item:first-child .weui-navbar__title:before {
   content: '';
   width: 35rpx;

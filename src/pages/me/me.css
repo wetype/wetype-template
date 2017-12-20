@@ -16,6 +16,9 @@
 .icon.me-notification {
   background-image: url('img/me-notification.png');
 }
+.icon.index-location {
+  background-image: url('img/location.png');
+}
 page {
   background-color: #fafafa;
 }
@@ -73,6 +76,7 @@ page {
 }
 .page .section.info .item .top {
   font-weight: bold;
+  margin-bottom: 20rpx;
 }
 .page .section.info .item .name {
   color: #111;
@@ -89,4 +93,5 @@ page {
 .page .section.btns .item .icon {
   width: 60rpx;
   height: 60rpx;
+  margin-bottom: 20rpx;
 }

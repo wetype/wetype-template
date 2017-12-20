@@ -7,7 +7,7 @@ include ../../pug/weui-mixins
             .name 李宗伟
         .right
             button(@tap="edit") 编辑
-    .section.info.border-bottom
+    .section.info.border-bottom.line-height-1
         .item 
             .top 17
             .name 好友
@@ -17,7 +17,7 @@ include ../../pug/weui-mixins
         .item
             .top 10
             .name 总报名/次
-    .section.btns.border
+    .section.btns.border.line-height-1
         .item
             .icon.me-activity
             .name 活动
@@ -41,6 +41,7 @@ include ../../pug/weui-mixins
             .icon.me-album
             .name 相册管理
     .section.weui-cells
+        +weui-list-arrow('admin-club-manage', '俱乐部管理', '')
         +weui-list-arrow('', '我的头衔', '球疯子')
         +weui-list-arrow('', '邀请好友', '')
         +weui-list-arrow('', '客服帮助', '')

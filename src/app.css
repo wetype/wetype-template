@@ -1076,8 +1076,12 @@ button[type="primary"] {
 }
 .weui-cell:before,
 .weui-cells:before,
-.weui-cells:after {
+.weui-cells:after,
+.weui-navbar {
   border-color: #f0f0f0;
+}
+.weui-navbar__slider {
+  transition: left 0.3s;
 }
 .border {
   border-top: 1rpx solid #f0f0f0;
@@ -1088,4 +1092,7 @@ button[type="primary"] {
 }
 .border-bottom {
   border-bottom: 1rpx solid #f0f0f0;
+}
+.line-height-1 {
+  line-height: 1;
 }
