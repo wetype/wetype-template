@@ -1,0 +1,49 @@
+include ../../pug/weui-list
+include ../../pug/weui-input
+include ../../pug/weui-panel
+
+.page 
+    .section.header
+        .left
+            .avatar
+                image(src="./img/lcw.jpg")
+            .name {{info.userInfo.nickname}}
+        .right 打电话
+    .section.date
+        .left
+            .label 今天
+            .display-date 12月2日
+        .right 20:00～22:00
+    .section.location.flex
+        .left.flex-1 1906羽毛球馆 0.1km
+        .right 开始导航
+    .section.members
+    
+    //- weui-list(data="{{listData}}")
+    +weui-cells
+        +weui-list('abc', 'cba')
+        +weui-list-arrow('./index', 'title', 'after', 'goodclick')
+
+    //- weui-input(:data="inputData")
+    +weui-cells
+        +weui-input('手机号', { ph: '请输入手机号', e: 'eee' })
+        +weui-input-phone-code('手机号', { ph: '请输入手机号', e: 'aaa', btnText: '{{btnText}}', getCode: 'getCode' })
+        +weui-input-date-picker('日期', { value: '{{date}}', start: '2017-12-01', end: '2017-12-30' })
+        +weui-input-time-picker('时间', { value: '{{time}}', change: 'switchChange' }) 
+        +weui-input-switch('开关')
+        +weui-input-textarea({ ph: '你的留言', counterText: '0/200' })
+    +weui-input-agreement({})
+
+    +weui-panel
+        +weui-panel-hd('图文组合列表')
+        +weui-panel-bd
+            +weui-panel-item-img({ url: 'index', imgUrl: './img/lcw.jpg', title: '标题', desc: '有各种物质组成的巨型球状天体，叫做星球有各种物质组成的巨型球状天体，叫做星球有各种物质组成的巨型球状天体，叫做星球' })
+            //- +weui-panel-item-img({ url: 'index', imgUrl: './img/lcw.jpg', title: '标题', desc: '有各种物质组成的巨型球状天体，叫做星球有各种物质组成的巨型球状天体，叫做星球有各种物质组成的巨型球状天体，叫做星球' })
+            +weui-panel-item-text({ title: '标题', desc: '有各种物质组成的巨型球状天体，叫做星球有各种物质组成的巨型球状天体，叫做星球有各种物质组成的巨型球状天体，叫做星球' })
+            +weui-panel-source({ title: '标题标题', desc: '有各种物质组成的巨型球状天体，叫做星球有各种物质组成的巨型球状天体，叫做星球有各种物质组成的巨型球状天体，叫做星' })
+                +weui-panel-source-info(['哈哈', '呵呵', '嗯嗯'])
+        +weui-panel-footer
+            +weui-panel-footer-list('查看更多')
+
+
+    //- .signup-btn(@tap="signup") 立即报名

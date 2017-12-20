@@ -5,10 +5,6 @@ import { post, get } from '../../libs/util'
 @Page.decor({
     config: {
         navigationBarTitleText: '活动详情',
-        usingComponents: {
-            'weui-list': 'weui-list',
-            'weui-input': 'weui-input'
-        }
     },
 })
 class ActivityDetail extends Page {
@@ -35,14 +31,14 @@ class ActivityDetail extends Page {
     ]
 
     async onLoad() {
-        let location = await wt.getLocation({})
-        let res = await get('/api/activity/index', {
-            activity_id: '5', 
-            lat: location.latitude,
-            lng: location.longitude
-        })
-        console.log(res)
-        this.setData({ info: res.data.msg })
+        // let location = await wt.getLocation({})
+        // let res = await get('/api/activity/index', {
+        //     activity_id: '5', 
+        //     lat: location.latitude,
+        //     lng: location.longitude
+        // })
+        // console.log(res)
+        // this.setData({ info: res.data.msg })
     }
 
     bindinput() {

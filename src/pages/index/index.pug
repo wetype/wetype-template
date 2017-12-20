@@ -11,6 +11,8 @@ include ../../pug/weui-mixins
                     .weui-navbar__slider(style="left: {{sliderLeft + sliderOffset}}px")
             .weui-tab__panel
         +weui-search-bar('搜索')
+        .float-btn(@tap="floatBtnTap")
+            .icon.plus-white
         scroll-view.weui-panel.weui-panel__access(
             :scroll-y="true"
             :show="!inputVal"
@@ -20,7 +22,7 @@ include ../../pug/weui-mixins
             +weui-panel-bd
                 - var list = [1,2,3,4,5,5,5,5,5,]
                 each el in list
-                    navigator.weui-media-box.weui-media-box_appmsg(url=url hover-class="weui-cell_active")
+                    navigator.weui-media-box.weui-media-box_appmsg(url='activityDetail' hover-class="weui-cell_active")
                         .weui-media-box__hd.weui-media-box__hd_in-appmsg
                             image.weui-media-box__thumb(src="./img/lcw.jpg")
                         .weui-media-box__bd.weui-media-box__bd_in-appmsg

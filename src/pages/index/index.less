@@ -1,18 +1,10 @@
+@import "../../style/icon.less";
+@import "../../style/color-vars.less";
+
 .weui-navbar__slider {
     transition: left 0.3s;
 }
 
-// .weui-search-bar {
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     z-index: 9999;
-// }
-
-.weui-tab {
-    // margin-top: 100rpx;
-}
 
 .weui-media-box__desc + .weui-media-box__desc {
     margin-top: 8rpx;
@@ -32,5 +24,22 @@
     }
     .weui-media-box__thumb {
         border-radius: 26rpx;
+    }
+}
+
+.float-btn {
+    position: fixed;
+    width: 100rpx;
+    height: 100rpx;
+    right: 20rpx;
+    bottom: 100rpx;
+    background-color: @mainColor1;
+    z-index: 999999;
+    border-radius: 50%;
+    .icon {
+        width: 60rpx;
+        height: 60rpx;
+        margin: 0 auto;
+        margin-top: 20rpx;
     }
 }

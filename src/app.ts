@@ -14,7 +14,7 @@ import { App, wt } from 'wetype-simple'
         ],
         window: {
             backgroundTextStyle: 'light',
-            navigationBarBackgroundColor: '#3cf',
+            navigationBarBackgroundColor: '#3ba686',
             navigationBarTitleText: 'Project BAT',
         }
     }

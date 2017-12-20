@@ -37,4 +37,17 @@ class Index extends Page {
         console.log('loadmore')
     }
 
+    async floatBtnTap() {
+        let { tapIndex } = await wt.showActionSheet({
+            itemList: ['创建活动', '按时间排序']
+        })
+        if (tapIndex === 0) {
+            wx.navigateTo({ url: 'activityCreate' })
+        } else if (tapIndex === 1) {
+
+        } else if (tapIndex === 2) {
+
+        }
+    }
+
 }
