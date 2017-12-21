@@ -1,5 +1,6 @@
 import { Page, wt, wx, types } from 'wetype-simple'
 import { SearchBarMixin } from '../../mixins/searchBar'
+import { observer } from '../../libs/observer'
 
 @Page.decor({
     config: {
@@ -22,6 +23,8 @@ class Index extends Page {
         this.sliderLeft = (systemInfo.windowWidth / 4 - 96) / 2
         this.sliderOffset = systemInfo.windowWidth / 4 * this.currentTabIndex
         this.windowHeight = systemInfo.windowHeight
+
+        observer.trigger('')
     }
 
     async navbarTap(res: types.WxEvent) {
