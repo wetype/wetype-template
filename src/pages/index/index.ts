@@ -13,7 +13,14 @@ import { observer } from '../../libs/observer'
 })
 class Index extends Page {
 
+    @Page.watch((val, old) => {
+        console.log(val, old)
+    })
     currentTabIndex = 1
+
+    @Page.watch(function(this: Index, val, old) {
+        console.log('123', this.windowHeight)
+    })
     sliderLeft = 0
     sliderOffset = 0
     windowHeight = 0
@@ -23,8 +30,6 @@ class Index extends Page {
         this.sliderLeft = (systemInfo.windowWidth / 4 - 96) / 2
         this.sliderOffset = systemInfo.windowWidth / 4 * this.currentTabIndex
         this.windowHeight = systemInfo.windowHeight
-
-        observer.trigger('')
     }
 
     async navbarTap(res: types.WxEvent) {
@@ -57,5 +62,10 @@ class Index extends Page {
             
         }
     }
+
+    // @Page.watch
+    // currentTabIndex(val, old) {
+
+    // }
 
 }

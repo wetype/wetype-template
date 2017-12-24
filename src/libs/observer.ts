@@ -7,6 +7,8 @@ class Observer {
     }
 
     trigger(eventName: string, ...args: any[]) {
+        let func = this.events[eventName]
+        if (!func) throw Error(`no event ${eventName}`)
         this.events[eventName](...args)
     }
 
