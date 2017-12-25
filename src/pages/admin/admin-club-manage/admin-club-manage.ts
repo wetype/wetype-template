@@ -19,7 +19,10 @@ class AdminClubManage extends Page {
     }
 
     click() {
-        this.testObj = 2
-        console.log(this.testObj)
+        this.testObj.a = { c: 2 }
+        console.log(this.data)
+        this.setData({
+            'testObj.a.c': 3
+        })
     }
 }
