@@ -1,6 +1,5 @@
 import { Page, wt, wx, types } from 'wetype-simple'
 import { SearchBarMixin } from '../../mixins/searchBar'
-import { observer } from '../../libs/observer'
 
 @Page.decor({
     config: {
@@ -13,27 +12,29 @@ import { observer } from '../../libs/observer'
 })
 class Index extends Page {
 
-    @Page.watch((val, old) => {
-        console.log(val, old)
-    })
     currentTabIndex = 1
-
-    @Page.watch(function(this: Index, val, old) {
-        console.log('123', this.windowHeight)
-    })
     sliderLeft = 0
     sliderOffset = 0
     windowHeight = 0
+
+    hahObj: any = { a: 1 }
 
     async onLoad() {
         let systemInfo = wx.getSystemInfoSync()
         this.sliderLeft = (systemInfo.windowWidth / 4 - 96) / 2
         this.sliderOffset = systemInfo.windowWidth / 4 * this.currentTabIndex
         this.windowHeight = systemInfo.windowHeight
+        // this.dataCache('hahObj.a', 'list')
+        // _.extend(this.dataCache, { haobj: { a: 2 } })
+        // this.setData({
+        //     'hahObj.a': 2
+        // })
     }
 
     async navbarTap(res: types.WxEvent) {
         let { index } = res.currentTarget.dataset
+        this.hahObj.a = [12]
+        console.log(this.hahObj.a)
         if (index === '0') {
             wx.navigateTo({ url: 'my-location' })
         } else {
@@ -63,9 +64,9 @@ class Index extends Page {
         }
     }
 
-    // @Page.watch
-    // currentTabIndex(val, old) {
+    @Page.event
+    testEvent(res) {
 
-    // }
-
+        console.log('res', res)
+    }
 }

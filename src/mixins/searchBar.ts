@@ -1,22 +1,19 @@
 import { Page, wt, wx, types } from 'wetype-simple'
-import { observer } from '../libs/observer'
 
 export class SearchBarMixin extends Page {
 
     inputShowed = false
     inputVal = ''
 
-    constructor() {
-        super()
-        observer.on('data', (...arg) => {
-            console.log(arg)
-        })
-    }
+    readonly currentTabIndex
 
-    onLoad() {}
+    onLoad() {
+        console.log(this.currentTabIndex)
+    }
 
     showInput() {
         this.inputShowed = true
+        this.emit('testEvent', 123)
     }
 
     hideInput() {
