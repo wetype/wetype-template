@@ -21,13 +21,12 @@ include ../../pug/weui-mixins
             bindscrolltolower="loadMore"
             style="height: {{windowHeight - 100}}px")
             +weui-panel-bd
-                - var list = [1,2,3,4,5,5,5,5,5,]
-                each el in list
+                block(:for="el in list")
                     navigator.weui-media-box.weui-media-box_appmsg(url='activityDetail' hover-class="weui-cell_active")
                         .weui-media-box__hd.weui-media-box__hd_in-appmsg
                             image.weui-media-box__thumb(src="./img/lcw.jpg")
                         .weui-media-box__bd.weui-media-box__bd_in-appmsg
-                            .weui-media-box__title 西电羽毛球俱乐部
+                            .weui-media-box__title {{el.name}}
                             .weui-media-box__desc 某某某球馆 0.1km
                             .weui-media-box__desc
                                 .left 16:00-18:00 报名中

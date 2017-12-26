@@ -12,29 +12,50 @@ import { SearchBarMixin } from '../../mixins/searchBar'
 })
 class Index extends Page {
 
+    @Page.watch((val) => {
+        console.log(val)
+    })
     currentTabIndex = 1
     sliderLeft = 0
     sliderOffset = 0
     windowHeight = 0
 
-    hahObj: any = { a: 1 }
+    list = [
+        {
+            name: 'hihihi'
+        },
+        {
+            name: 'hihihi'
+        },
+        {
+            name: 'hihihi'
+        },
+        {
+            name: 'hihihi'
+        },
+        {
+            name: 'hihihi'
+        },
+        {
+            name: 'hihihi'
+        },
+        {
+            name: 'hihihi'
+        },
+        {
+            name: 'hihihi'
+        },
+    ]
 
     async onLoad() {
         let systemInfo = wx.getSystemInfoSync()
         this.sliderLeft = (systemInfo.windowWidth / 4 - 96) / 2
         this.sliderOffset = systemInfo.windowWidth / 4 * this.currentTabIndex
         this.windowHeight = systemInfo.windowHeight
-        // this.dataCache('hahObj.a', 'list')
-        // _.extend(this.dataCache, { haobj: { a: 2 } })
-        // this.setData({
-        //     'hahObj.a': 2
-        // })
     }
 
     async navbarTap(res: types.WxEvent) {
         let { index } = res.currentTarget.dataset
-        this.hahObj.a = [12]
-        console.log(this.hahObj.a)
         if (index === '0') {
             wx.navigateTo({ url: 'my-location' })
         } else {
@@ -45,6 +66,9 @@ class Index extends Page {
 
     loadMore() {
         console.log('loadmore')
+        this.list = this.list.concat({
+            name: 'h2h2h'
+        })
     }
 
     async floatBtnTap() {
@@ -64,7 +88,7 @@ class Index extends Page {
         }
     }
 
-    @Page.event
+    @Page.on
     testEvent(res) {
 
         console.log('res', res)

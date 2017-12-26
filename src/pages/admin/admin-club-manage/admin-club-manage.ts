@@ -8,21 +8,19 @@ import { Page, wx, wt, types } from 'wetype-simple'
 })
 class AdminClubManage extends Page {
 
-    testObj: any = {
-        a: {
-            c: 1
-        }
-    }
-
     onLoad(options: types.OnloadOptions) {
 
     }
 
+    hah = 1
+
+    get testObj() {
+        return this.hah + 1
+    }
+
     click() {
-        this.testObj.a = { c: 2 }
-        console.log(this.data)
-        this.setData({
-            'testObj.a.c': 3
-        })
+        // this.hah = this.hah + 1
+        // this.applyData()
+        // console.log(this.testObj)
     }
 }
