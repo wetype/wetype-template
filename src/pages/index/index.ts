@@ -12,9 +12,6 @@ import { SearchBarMixin } from '../../mixins/searchBar'
 })
 class Index extends Page {
 
-    @Page.watch((val) => {
-        console.log(val)
-    })
     currentTabIndex = 1
     sliderLeft = 0
     sliderOffset = 0
@@ -66,9 +63,6 @@ class Index extends Page {
 
     loadMore() {
         console.log('loadmore')
-        this.list = this.list.concat({
-            name: 'h2h2h'
-        })
     }
 
     async floatBtnTap() {

@@ -4,6 +4,7 @@ import { App, wt } from 'wetype-simple'
     config: {
         pages: [
             'index',
+            'me-edit-profile',
             'discovery',
             'my-location',
             'search',
@@ -30,12 +31,12 @@ import { App, wt } from 'wetype-simple'
                     iconPath: './img/tabbar-1.png',
                     selectedIconPath: './img/tabbar-1-selected.png'
                 },
-                {
-                    pagePath: 'discovery',
-                    text: '发现',
-                    iconPath: './img/tabbar-2.png',
-                    selectedIconPath: './img/tabbar-2-selected.png'
-                },
+                // {
+                //     pagePath: 'discovery',
+                //     text: '发现',
+                //     iconPath: './img/tabbar-2.png',
+                //     selectedIconPath: './img/tabbar-2-selected.png'
+                // },
                 {
                     pagePath: 'me',
                     text: '我',

@@ -7,7 +7,7 @@ mixin weui-input(title, opt)
         .weui-cell__hd
             .weui-label=title
         .weui-cell__bd
-            input.weui-input(placeholder=opt.ph bindinput=opt.e)
+            input.weui-input(type=opt.type placeholder=opt.ph bindinput=opt.e)
 
 mixin weui-input-phone-code(title, op)
     .weui-cell.weui-cell_input.weui-cell_vcode
@@ -63,8 +63,8 @@ mixin weui-input-select-title(op)
         .weui-cell__hd.weui-cell__hd_in-select-after
             .weui-label=op.label
         .weui-cell__bd
-            picker(value=op.value range=op.range change=change)
-                .weui-select.weui-select_in-select-after=rangeEl
+            picker(:value=op.value :range=op.range @change=op.change)
+                .weui-select.weui-select_in-select-after=op.rangeEl
 
 mixin weui-input-agreement(op)
     checkbox-group(change=op.change)

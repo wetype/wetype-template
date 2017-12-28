@@ -5,7 +5,7 @@ console.log(type)
 
 let nameCamel = name.replace(/(\w)/, (m, $) => $.toUpperCase())
 let pugTpl = `
-    include ../../pug/weui-mixins
+include ../../pug/weui-mixins
     
 `
 let lessTpl = ``

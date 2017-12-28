@@ -10,7 +10,6 @@ export class SearchBarMixin extends Page {
     readonly currentTabIndex
 
     onLoad() {
-        console.log(this.currentTabIndex)
     }
 
     showInput() {
