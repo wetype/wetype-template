@@ -14,7 +14,7 @@ export class SearchBarMixin extends Page {
 
     showInput() {
         this.inputShowed = true
-        this.emit('testEvent', 123)
+        // this.emit('testEvent', 123)
     }
 
     hideInput() {

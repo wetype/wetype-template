@@ -3,11 +3,13 @@ include ../../pug/weui-mixins
     +page-title('创建活动')
     .page__bd
         .weui-cells.weui-cells_after-title
-            .weui-cell.weui-cell_input
-                .weui-cell__hd
-                    .weui-label 活动球馆
-                .weui-cell__bd
-                    input.weui-input(placeholder="请输入活动球馆" bindinput="arenaInput")
+            //- .weui-cell.weui-cell_input
+            //-     .weui-cell__hd
+            //-         .weui-label 活动球馆
+                //- .weui-cell__bd
+                //-     input.weui-input(placeholder="请输入活动球馆" bindinput="arenaInput")
+            +weui-list-arrow('select-arena', '选择球馆', 'xxx球馆')
+
             .weui-cell.weui-cell_input
                 .weui-cell__hd
                     .weui-label 人数限制

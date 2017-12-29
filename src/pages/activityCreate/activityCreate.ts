@@ -2,6 +2,7 @@
 import { Page, wx, wt, types } from 'wetype-simple'
 import { get, post } from '../../libs/util'
 import param from 'jquery-param'
+import { observer } from '../../libs/observer'
 
 @Page.decor({
     config: {
@@ -23,11 +24,14 @@ class ActivityCreate extends Page {
 
     async onLoad() {
         let location = await wt.getLocation({})
-
+        observer.on('arenaSelected', (obj) => {
+            console.log(obj)
+        })
         // let res = await get('/api/common/get-arenas', {
         //     lat: location.latitude,
         //     lng: location.longitude
         // })
+
 
     }
 

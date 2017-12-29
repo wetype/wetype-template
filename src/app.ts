@@ -4,6 +4,7 @@ import { App, wt } from 'wetype-simple'
     config: {
         pages: [
             'index',
+            'select-arena',
             'me-edit-profile',
             'discovery',
             'my-location',
