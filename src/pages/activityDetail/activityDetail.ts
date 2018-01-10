@@ -31,6 +31,7 @@ class ActivityDetail extends Page {
     ]
 
     async onLoad() {
+        console.log('onload detail')
         // let location = await wt.getLocation({})
         // let res = await get('/api/activity/index', {
         //     activity_id: '5', 
@@ -39,6 +40,10 @@ class ActivityDetail extends Page {
         // })
         // console.log(res)
         // this.setData({ info: res.data.msg })
+    }
+
+    onShow() {
+        console.log('onshow detail')
     }
 
     bindinput() {

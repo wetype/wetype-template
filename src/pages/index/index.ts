@@ -65,6 +65,11 @@ class Index extends Page {
         console.log('loadmore')
     }
 
+    @Page.event
+    go(index, e: types.WxEvent) {
+        console.log(index)
+    }
+
     async floatBtnTap() {
         try {
             let { tapIndex } = await wt.showActionSheet({

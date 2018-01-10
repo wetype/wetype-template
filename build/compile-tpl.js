@@ -5,6 +5,7 @@
 const _ = require('lodash')
 const Entities = require('html-entities').XmlEntities
 const entities = new Entities
+const { alphabet } = require('./util')
 module.exports = class CompilerTpl {
 
     constructor() {
@@ -42,7 +43,7 @@ module.exports = class CompilerTpl {
                 let _style = pairs[':style']
                 let _events = attrs.filter(el => el[0] === '@' || el[0] === '#')
                 let _others = attrs.filter(el => el[0] === ':' && !/class|for|show|hide|style|if/.test(el))
-
+                // console.log(attrs)
                 if (_class) {
                     let parsedClass = this.handleClass(_class)
                     pairs['class'] = pairs['class'] || ''
@@ -80,7 +81,21 @@ module.exports = class CompilerTpl {
                 _events.forEach(key => {
                     let method = key[0] === '@' ? 'bind' : 'catch'
                     let name = key.slice(1)
-                    pairs[`${method}${name}`] = pairs[key]
+                    let val = pairs[key]
+                    // 若带参数
+                    if (/.+\(/.test(val)) {
+                        // 匹配参数
+                        let argsMatched = val.match(/[\d\w\s]+\(([\d\w\,\s]+)\)/)
+                        if (argsMatched) {
+                            let args = argsMatched[1].split(',').map(el => el.trim())
+                            val = val.match(/(.+?)\(/)[1]
+                            args.forEach((el, i) => {
+                                let ii = alphabet(i)
+                                pairs[`data-arg-${ii}`] = `{{${el}}}`
+                            })
+                        }
+                    }
+                    pairs[`${method}${name}`] = val
                     delete pairs[key]
                 })
 
@@ -134,5 +149,9 @@ module.exports = class CompilerTpl {
             }
             return resStr(matched[2], 'index', matched[1], 'index')
         }
+    }
+
+    handleEvent(key, val, pairs) {
+        
     }
 }
