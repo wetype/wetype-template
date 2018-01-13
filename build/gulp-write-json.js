@@ -3,6 +3,7 @@ const util = require('./util')
 const fs = require('fs')
 const Path = require('path')
 const _ = require('lodash')
+const getPages = require('./getPages')
 
 module.exports = function() {
     return through.obj((file, enc, cb) => {
@@ -23,6 +24,11 @@ module.exports = function() {
                 config = {
                     component: true
                 }
+            }
+            else if (isApp) {
+                config.pages = getPages(config.mainPage, config.excludePages)
+                delete config.mainPage
+                delete config.excludePages
             }
             else if (isPage) {
                 Object.keys(config.usingComponents || {}).forEach(name => {
