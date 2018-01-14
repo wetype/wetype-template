@@ -12,7 +12,7 @@ module.exports = function getPages(mainPage, excludePages) {
             } else {
                 let name = Path.parse(el.path).name
                 let distPath = el.path.replace('src/', '')
-                let path = distPath + Path.sep + name
+                let path = Path.join(distPath, name)
                 result.push(path)
             }
         })

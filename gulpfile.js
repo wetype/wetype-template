@@ -40,7 +40,6 @@ gulp.task('pug', () => {
         .pipe(rename({
             extname: '.wxml'
         }))
-        // .pipe(flatten())
         .pipe(modifyWxml())
         .pipe(compileTpl())
         .pipe(gulp.dest('dist'))
