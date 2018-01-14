@@ -22,9 +22,9 @@ include ../../pug/weui-mixins
             style="height: {{windowHeight - 100}}px")
             +weui-panel-bd
                 block(:for="(el, index) in list")
-                    navigator.weui-media-box.weui-media-box_appmsg(url='activityDetail' hover-class="weui-cell_active" @tap="go(index, aa, cc)")
+                    navigator.weui-media-box.weui-media-box_appmsg(url='/pages/activityDetail/activityDetail' hover-class="weui-cell_active" @tap="go(index, aa, cc)")
                         .weui-media-box__hd.weui-media-box__hd_in-appmsg
-                            image.weui-media-box__thumb(src="./img/lcw.jpg")
+                            image.weui-media-box__thumb(src="/img/lcw.jpg")
                         .weui-media-box__bd.weui-media-box__bd_in-appmsg
                             .weui-media-box__title {{el.name}}
                             .weui-media-box__desc 某某某球馆 0.1km

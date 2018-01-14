@@ -2,7 +2,7 @@ import { App, wt } from 'wetype-simple'
 
 @App.decor({
     config: {
-        mainPage: 'index',
+        mainPage: 'pages/index/index',
         window: {
             backgroundTextStyle: 'light',
             navigationBarBackgroundColor: '#3ba686',
@@ -15,7 +15,7 @@ import { App, wt } from 'wetype-simple'
             position: 'bottom',
             list: [
                 {
-                    pagePath: 'index',
+                    pagePath: 'pages/index/index',
                     text: '活动',
                     iconPath: './img/tabbar-1.png',
                     selectedIconPath: './img/tabbar-1-selected.png'
@@ -27,7 +27,7 @@ import { App, wt } from 'wetype-simple'
                 //     selectedIconPath: './img/tabbar-2-selected.png'
                 // },
                 {
-                    pagePath: 'me',
+                    pagePath: 'pages/me/me',
                     text: '我',
                     iconPath: './img/tabbar-3.png',
                     selectedIconPath: './img/tabbar-3-selected.png'

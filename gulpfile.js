@@ -28,8 +28,6 @@ gulp.task('ts', () => {
         .pipe(cache('ts'))
         .pipe(tsProject())
         .js
-        .pipe(flatten())
-        .pipe(flattenRequires())
         .pipe(rewrite())
         .pipe(writeJson())
         .pipe(gulp.dest('dist'))
@@ -42,7 +40,7 @@ gulp.task('pug', () => {
         .pipe(rename({
             extname: '.wxml'
         }))
-        .pipe(flatten())
+        // .pipe(flatten())
         .pipe(modifyWxml())
         .pipe(compileTpl())
         .pipe(gulp.dest('dist'))
@@ -52,7 +50,6 @@ gulp.task('less', cb => {
     return gulp.src('src/**/*.less')
         .pipe(plumber())
         .pipe(less())
-        .pipe(flatten())
         .pipe(rename({
             extname: '.wxss'
         }))

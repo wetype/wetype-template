@@ -1,6 +1,6 @@
 const through = require('through2')
 const util = require('./util')
-const fs = require('fs')
+const fs = require('fs-extra')
 const Path = require('path')
 const _ = require('lodash')
 const getPages = require('./getPages')
@@ -36,13 +36,11 @@ module.exports = function() {
                     config.usingComponents[name] = `./${v}.com`
                 })
             }
-            let name = Path.parse(path).name
-            return fs.writeFile(
-                `dist/${name}.json`, 
-                JSON.stringify(config),
-                'utf-8',
-                (err) => cb(err, file)
-            )
+            let relativePath = Path.relative(process.cwd(), path) + 'on'
+            let dir = Path.dirname(relativePath)
+            return fs.ensureDir(dir, err => {
+                fs.writeJson(relativePath, config, err => cb(err, file))
+            })
         }
         cb(null, file)
     })

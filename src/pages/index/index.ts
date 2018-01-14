@@ -76,7 +76,7 @@ class Index extends Page {
                 itemList: ['创建活动', '按时间排序']
             })
             if (tapIndex === 0) {
-                wx.navigateTo({ url: 'activityCreate' })
+                wx.navigateTo({ url: '/pages/activityCreate/activityCreate' })
             } else if (tapIndex === 1) {
     
             } else if (tapIndex === 2) {

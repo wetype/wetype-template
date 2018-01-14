@@ -1,3 +1,5 @@
+const Path = require('path')
+
 module.exports.first = function(obj) {
     for (let p in obj) {
         return obj[p]
@@ -21,4 +23,11 @@ module.exports.alphabet = function(str) {
     } else {
         return map[str]
     }
+}
+
+module.exports.resoleRelativePath = function(path) {
+    if (path[0] === '@') {
+        return path.replace('@', `${process.cwd()}${Path.sep}src`)
+    }
+    return path
 }
