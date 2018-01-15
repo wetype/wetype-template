@@ -116,10 +116,6 @@ module.exports = class CompilerTpl {
         // let reg = /([\w\-]+)\:\s?([\s\w\+\-\*\/\&\|_\.]+)\,?/g
         let reg = new RegExp(`<${componentName}\\s\\.+?>\\.+?\\<\\/${componentName}>`)
         let matched = componentTpl.match(reg)
-        console.log(matched)
-        debugger
-        // pageTpl.replace(reg, (match, ) => {
-        // })
     }
 
     handleClass(str) {

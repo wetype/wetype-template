@@ -31,3 +31,10 @@ module.exports.resoleRelativePath = function(path) {
     }
     return path
 }
+
+module.exports.correctSep = function(path) {
+    if (/\\/.test(path)) {
+        return path.replace(/\\/g, '/')
+    }
+    return path
+}

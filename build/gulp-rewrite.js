@@ -1,6 +1,7 @@
 const through = require('through2')
 const fs = require('fs')
 const Path = require('path')
+const { correctSep } = require('./util')
 
 module.exports = function rewrite(options) {
 
@@ -21,7 +22,7 @@ function rewriteReq(content, path) {
             return match
         }
         let modulePath = `${process.cwd()}/dist/modules/${moduleName}`
-        let relativePath = Path.relative(path, modulePath).replace('../', '')
+        let relativePath = correctSep(Path.relative(path, modulePath)).replace('../', '')
         return `${dec} ${varName} = require('${relativePath}');`
     })
 }
