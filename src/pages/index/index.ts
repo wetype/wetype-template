@@ -49,6 +49,8 @@ class Index extends Page {
         this.sliderLeft = (systemInfo.windowWidth / 4 - 96) / 2
         this.sliderOffset = systemInfo.windowWidth / 4 * this.currentTabIndex
         this.windowHeight = systemInfo.windowHeight
+        console.log(this)
+        
     }
 
     async navbarTap(res: types.WxEvent) {

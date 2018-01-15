@@ -6,7 +6,7 @@ import { Page, wx, wt, types } from 'wetype-simple'
         navigationBarTitleText: '我的俱乐部'
     }
 })
-class AdminClubManage extends Page {
+class Admin_AdminClubManage extends Page {
 
     onLoad(options: types.OnloadOptions) {
 
