@@ -5,7 +5,7 @@
     "author": "GrePuG",
     "scripts": {
         "rm": "rm -rf ./dist/node_modules",
-        "start": "prettier -l --write **/* && gulp",
+        "start": "gulp",
         "p": "node ./build/newPage.js page",
         "c": "node ./build/newPage.js component"
     },
