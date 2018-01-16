@@ -1,21 +1,21 @@
 .icon {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
 }
 .icon.plus-white {
-  background-image: url('@/img/plus-white.png');
+    background-image: url('@/img/plus-white.png');
 }
 .icon.me-activity {
-  background-image: url('@/img/me-activity.png');
+    background-image: url('@/img/me-activity.png');
 }
 .icon.me-club {
-  background-image: url('@/img/me-club.png');
+    background-image: url('@/img/me-club.png');
 }
 .icon.me-notification {
-  background-image: url('@/img/me-notification.png');
+    background-image: url('@/img/me-notification.png');
 }
 .icon.index-location {
-  background-image: url('@/img/location.png');
+    background-image: url('@/img/location.png');
 }

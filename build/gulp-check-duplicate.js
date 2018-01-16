@@ -2,7 +2,6 @@ const through = require('through2')
 const _ = require('lodash')
 
 function rewrite(options) {
-
     return through.obj((file, enc, cb) => {
         let { path, contents } = file
         let content = String(contents)
@@ -16,12 +15,16 @@ function rewrite(options) {
             let a = _.uniq(vars)
             let duplicates = _.uniq(_.difference(vars, a))
             if (duplicates.length) {
-                return cb(new Error(`variables ${duplicates.join(' ,')} are duplicated`), undefined);
+                return cb(
+                    new Error(
+                        `variables ${duplicates.join(' ,')} are duplicated`
+                    ),
+                    undefined
+                )
             }
         }
         cb(null, file)
     })
-
 }
 
 module.exports = rewrite

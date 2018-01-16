@@ -1,5 +1,4 @@
 class Observer {
-
     private events: any = {}
 
     on(eventName: string, func: Function) {
@@ -11,7 +10,6 @@ class Observer {
         if (!func) throw Error(`no event ${eventName}`)
         this.events[eventName](...args)
     }
-
 }
 
-export const observer = new Observer
+export const observer = new Observer()

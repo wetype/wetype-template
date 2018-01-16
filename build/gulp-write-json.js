@@ -9,7 +9,9 @@ module.exports = function() {
     return through.obj((file, enc, cb) => {
         let { path, contents } = file
         let content = String(contents)
-        let matched = content.match(/[App|Page|Component]\.decor\(\{([\s\S\w\W]+?)\}\)/i)
+        let matched = content.match(
+            /[App|Page|Component]\.decor\(\{([\s\S\w\W]+?)\}\)/i
+        )
         let isComponent = /Component\.decor/.test(content)
         let isPage = /Page\.decor/.test(content)
         let isApp = /App\.decor/.test(content)
@@ -24,13 +26,11 @@ module.exports = function() {
                 config = {
                     component: true
                 }
-            }
-            else if (isApp) {
+            } else if (isApp) {
                 config.pages = getPages(config.mainPage, config.excludePages)
                 delete config.mainPage
                 delete config.excludePages
-            }
-            else if (isPage) {
+            } else if (isPage) {
                 Object.keys(config.usingComponents || {}).forEach(name => {
                     let v = config.usingComponents[name]
                     config.usingComponents[name] = `./${v}.com`
@@ -47,8 +47,9 @@ module.exports = function() {
 }
 
 function rmBehaviorArr(str) {
-    return str.replace(/behaviors:\s?\[.+?\]/, '')
-    .replace(/mixins:\s?\[.+?\]/, '')
+    return str
+        .replace(/behaviors:\s?\[.+?\]/, '')
+        .replace(/mixins:\s?\[.+?\]/, '')
 }
 
 function getConfig(str) {

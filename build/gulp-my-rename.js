@@ -2,7 +2,6 @@ const through = require('through2')
 const Path = require('path')
 
 module.exports = function(options) {
-
     return through.obj((file, enc, cb) => {
         let { path, contents } = file
         let isPage = /\/pages\//.test(path)
@@ -16,7 +15,6 @@ module.exports = function(options) {
         }
         console.log('path', path)
         console.log('base', base)
-        // file.path = 
+        // file.path =
     })
-
 }

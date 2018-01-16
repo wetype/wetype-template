@@ -4,8 +4,7 @@ const Path = require('path')
 const copy = require('copy')
 const fs = require('fs')
 
-module.exports = function (options) {
-
+module.exports = function(options) {
     return through.obj((file, enc, cb) => {
         let { path, contents } = file
         // package.json
@@ -25,5 +24,4 @@ module.exports = function (options) {
             cb(null, file)
         })
     })
-
 }

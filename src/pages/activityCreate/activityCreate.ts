@@ -1,4 +1,3 @@
-
 import { Page, wx, wt, types } from 'wetype-simple'
 import { get, post } from '../../libs/util'
 import param from 'jquery-param'
@@ -10,7 +9,6 @@ import { observer } from '../../libs/observer'
     }
 })
 class ActivityCreate extends Page {
-    
     date = '2017-12-02'
     timeStart = '10:00'
     timeEnd = '12:00'
@@ -24,20 +22,28 @@ class ActivityCreate extends Page {
 
     async onLoad() {
         let location = await wt.getLocation({})
-        observer.on('arenaSelected', (obj) => {
+        observer.on('arenaSelected', obj => {
             console.log(obj)
         })
         // let res = await get('/api/common/get-arenas', {
         //     lat: location.latitude,
         //     lng: location.longitude
         // })
-
-
     }
 
     async submit() {
-        let { date, timeStart, timeEnd, arenaId, limit, 
-            phone, charge, joinDeadline, cancelDeadline, intro } = this.data
+        let {
+            date,
+            timeStart,
+            timeEnd,
+            arenaId,
+            limit,
+            phone,
+            charge,
+            joinDeadline,
+            cancelDeadline,
+            intro
+        } = this.data
         let res = await post('/api/activity/create-temp', {
             arena_id: arenaId,
             person_limit: limit,
@@ -52,7 +58,6 @@ class ActivityCreate extends Page {
             descript: intro,
             service: ['羽毛球', '场地']
         })
-
     }
 
     bindDateChange(res: types.WxEvent) {

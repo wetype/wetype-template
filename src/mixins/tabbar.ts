@@ -1,7 +1,6 @@
 import { Page, wx, wt, types } from 'wetype-simple'
 
 export class TabbarMixin extends Page {
-
     onLoad() {}
 
     currentTabIndex = 0
@@ -10,7 +9,4 @@ export class TabbarMixin extends Page {
     windowHeight = 0
 
     systemInfo = wx.getSystemInfoSync()
-
-    
-
 }

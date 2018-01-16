@@ -6,7 +6,7 @@ import { App, wt } from 'wetype-simple'
         window: {
             backgroundTextStyle: 'light',
             navigationBarBackgroundColor: '#3ba686',
-            navigationBarTitleText: 'Project BAT',
+            navigationBarTitleText: 'Project BAT'
         },
         tabBar: {
             color: '#666',
@@ -37,13 +37,7 @@ import { App, wt } from 'wetype-simple'
     }
 })
 class APP extends App {
+    async onLaunch() {}
 
-    async onLaunch() {
-        
-
-    }
-
-    onShow() {
-
-    }
+    onShow() {}
 }

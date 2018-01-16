@@ -1,5 +1,5 @@
 const dirTree = require('directory-tree')
-const filteredTree = dirTree('src/pages', {extensions:/\.ts/})
+const filteredTree = dirTree('src/pages', { extensions: /\.ts/ })
 const _ = require('lodash')
 const Path = require('path')
 
@@ -19,6 +19,6 @@ module.exports = function getPages(mainPage, excludePages) {
     }
     recursive(filteredTree)
     mainPage = mainPage || 'pages/index/index'
-    result = result.sort(el => el === mainPage ? -1 : 1)
+    result = result.sort(el => (el === mainPage ? -1 : 1))
     return _.difference(result, excludePages)
 }

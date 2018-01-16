@@ -12,7 +12,4 @@ import { Component } from 'wetype-simple'
         }
     }
 })
-export class WeuiInput extends Component {
-
-
-}
+export class WeuiInput extends Component {}

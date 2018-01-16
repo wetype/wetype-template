@@ -11,7 +11,6 @@ import { SearchBarMixin } from '../../mixins/searchBar'
     mixins: [SearchBarMixin]
 })
 class Index extends Page {
-
     currentTabIndex = 1
     sliderLeft = 0
     sliderOffset = 0
@@ -41,7 +40,7 @@ class Index extends Page {
         },
         {
             name: 'hihihi'
-        },
+        }
     ]
 
     async onLoad() {
@@ -50,7 +49,6 @@ class Index extends Page {
         this.sliderOffset = systemInfo.windowWidth / 4 * this.currentTabIndex
         this.windowHeight = systemInfo.windowHeight
         console.log(this)
-        
     }
 
     async navbarTap(res: types.WxEvent) {
@@ -80,18 +78,13 @@ class Index extends Page {
             if (tapIndex === 0) {
                 wx.navigateTo({ url: '/pages/activityCreate/activityCreate' })
             } else if (tapIndex === 1) {
-    
             } else if (tapIndex === 2) {
-    
             }
-        } catch (e) {
-            
-        }
+        } catch (e) {}
     }
 
     @Page.on
     testEvent(res) {
-
         console.log('res', res)
     }
 }

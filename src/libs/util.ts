@@ -24,7 +24,6 @@ export const get = async (url: string, data?: any) => {
 }
 
 export const post = async (url: string, data: any) => {
-
     let session = await wt.getStorage({ key: 'session' })
     return wt.request({
         url: config.hostName + url,

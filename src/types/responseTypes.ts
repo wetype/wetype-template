@@ -1,7 +1,6 @@
 import { types } from 'wetype-simple'
 
 export interface Response {
-    
     /**
      * 返回数据
      */
@@ -13,14 +12,14 @@ export interface Response {
     alertMsg?: string
 
     /**
-     * 
+     *
      */
     type: 'succ' | 'err'
 }
 
 export interface LoginRes {
     msg: {
-        new: 0 | 1,
+        new: 0 | 1
         session: string
     }
     type: string

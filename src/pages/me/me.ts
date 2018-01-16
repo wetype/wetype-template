@@ -1,4 +1,3 @@
-
 import { wt, wx, Page } from 'wetype-simple'
 
 @Page.decor({
@@ -8,16 +7,7 @@ import { wt, wx, Page } from 'wetype-simple'
     }
 })
 class Me extends Page {
+    onLoad() {}
 
-    onLoad() {
-        
-
-        
-    }
-
-    edit() {
-
-
-    }
-
+    edit() {}
 }

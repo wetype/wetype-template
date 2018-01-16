@@ -9,7 +9,6 @@ import { Component } from 'wetype-simple'
     }
 })
 export class WeuiList extends Component {
-
     attached() {
         console.log('weui-list-attached')
         console.log(this.data.data)

@@ -1,4 +1,3 @@
-
 import { Page, wx, wt, types } from 'wetype-simple'
 
 @Page.decor({
@@ -7,10 +6,7 @@ import { Page, wx, wt, types } from 'wetype-simple'
     }
 })
 class Admin_AdminClubManage extends Page {
-
-    onLoad(options: types.OnloadOptions) {
-
-    }
+    onLoad(options: types.OnloadOptions) {}
 
     hah = 1
 

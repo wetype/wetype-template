@@ -1,16 +1,13 @@
 import { Page, wt, wx, types } from 'wetype-simple'
 
 export class SearchBarMixin extends Page {
-
     inputShowed = false
 
-    @Page.input('onInput')
-    inputVal = ''
+    @Page.input('onInput') inputVal = ''
 
     readonly currentTabIndex
 
-    onLoad() {
-    }
+    onLoad() {}
 
     showInput() {
         this.inputShowed = true
@@ -25,5 +22,4 @@ export class SearchBarMixin extends Page {
     clearInput() {
         this.inputVal = ''
     }
-
 }

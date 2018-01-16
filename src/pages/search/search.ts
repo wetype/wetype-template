@@ -1,4 +1,3 @@
-
 import { Page, wx, wt, types } from 'wetype-simple'
 
 @Page.decor({
@@ -10,14 +9,10 @@ import { Page, wx, wt, types } from 'wetype-simple'
     }
 })
 class Search extends Page {
-
     inputVal = ''
     inputShowed = false
 
-
-    onLoad(options: types.OnloadOptions) {
-
-    }
+    onLoad(options: types.OnloadOptions) {}
 
     clearInput() {
         this.setData({ inputVal: '' })
@@ -34,5 +29,4 @@ class Search extends Page {
     hideInput() {
         this.setData({ inputVal: '', inputShowed: false })
     }
-
 }
