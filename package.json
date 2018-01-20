@@ -7,6 +7,10 @@
         "rm": "rm -rf ./dist/node_modules",
         "start": "gulp"
     },
+    "wetype": {
+        "sourceDir": "src",
+        "distDir": "dist"
+    },
     "devDependencies": {
         "@types/gulp": "^4.0.5",
         "@types/lodash": "^4.14.92",
