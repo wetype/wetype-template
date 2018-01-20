@@ -5,49 +5,15 @@
     "author": "GrePuG",
     "scripts": {
         "rm": "rm -rf ./dist/node_modules",
-        "start": "gulp",
-        "p": "node ./build/newPage.js page",
-        "c": "node ./build/newPage.js component"
+        "start": "gulp"
     },
     "devDependencies": {
         "@types/gulp": "^4.0.5",
-        "@types/gulp-rename": "^0.0.33",
         "@types/lodash": "^4.14.92",
-        "@types/node": "^9.3.0",
-        "@types/rollup": "^0.51.4",
-        "copy": "^0.3.1",
-        "copy-node-modules": "^1.0.3",
-        "directory-tree": "^2.0.0",
-        "fs-extra": "^5.0.0",
         "gulp": "^3.9.1",
-        "gulp-cache": "^1.0.2",
-        "gulp-cached": "^1.1.1",
-        "gulp-clean": "^0.4.0",
-        "gulp-flatten": "^0.4.0",
-        "gulp-flatten-requires": "^1.0.0",
-        "gulp-imagemin": "^4.1.0",
-        "gulp-less": "^3.4.0",
-        "gulp-plumber": "^1.2.0",
-        "gulp-pug": "^3.3.0",
-        "gulp-rename": "^1.2.2",
-        "gulp-rollup": "^2.15.0",
-        "gulp-typescript": "^4.0.0-alpha.1",
-        "gulp-uglify": "^3.0.0",
-        "html-entities": "^1.2.1",
-        "less": "^2.7.3",
-        "mime-types": "^2.1.17",
-        "prettier": "^1.10.2",
-        "pug": "^2.0.0-rc.4",
-        "rollup": "^0.54.0",
-        "rollup-plugin-multi-entry": "^2.0.2",
-        "rollup-plugin-node-resolve": "^3.0.2",
-        "rollup-plugin-typescript": "^0.8.1",
-        "stream": "^0.0.2",
-        "through2": "^2.0.3",
-        "typescript": "^2.6.2"
+        "prettier": "^1.10.2"
     },
     "dependencies": {
-        "jquery-param": "^0.2.0",
         "tslib": "^1.8.0",
         "wetype-simple": "0.0.2"
     }
