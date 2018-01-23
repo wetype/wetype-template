@@ -1,1 +1,1 @@
-# Wetype-Simple-Template
+# wetype-Template

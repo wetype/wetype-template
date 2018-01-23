@@ -1,4 +1,4 @@
-import { Page, wt, wx, types } from 'wetype-simple'
+import { Page, wt, wx, types } from 'wetype'
 
 @Page.decor({
     config: {

@@ -1,4 +1,4 @@
-import { App, wt } from 'wetype-simple'
+import { App, wt } from 'wetype'
 
 @App.decor({
     config: {

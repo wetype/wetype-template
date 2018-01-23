@@ -1,24 +1,24 @@
 {
-    "name": "wetype-simple-template",
-    "version": "0.0.1",
-    "main": "dist/index.js",
-    "author": "GrePuG",
-    "scripts": {
-        "rm": "rm -rf ./dist/node_modules",
-        "start": "gulp"
-    },
-    "wetype": {
-        "sourceDir": "src",
-        "distDir": "dist"
-    },
-    "devDependencies": {
-        "@types/gulp": "^4.0.5",
-        "@types/lodash": "^4.14.92",
-        "gulp": "^3.9.1",
-        "prettier": "^1.10.2"
-    },
-    "dependencies": {
-        "tslib": "^1.8.0",
-        "wetype-simple": "0.0.2"
-    }
+  "name": "wetype-template",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "author": "GrePuG",
+  "scripts": {
+    "rm": "rm -rf ./dist/node_modules",
+    "start": "gulp"
+  },
+  "wetype": {
+    "sourceDir": "src",
+    "distDir": "dist"
+  },
+  "devDependencies": {
+    "@types/gulp": "^4.0.5",
+    "@types/lodash": "^4.14.92",
+    "gulp": "^3.9.1",
+    "prettier": "^1.10.2"
+  },
+  "dependencies": {
+    "tslib": "^1.9.0",
+    "wetype": "0.0.2"
+  }
 }
